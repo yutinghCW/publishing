@@ -1,0 +1,33 @@
+.btn {
+    display: table;
+    padding: 7px 15px;
+    font-size: $h4;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 0.25rem;
+    @include media-breakpoint-up(md) {
+        padding: 10px 20px;
+    }
+    &.btn-outlined {
+        background-color: transparent;
+        &.btn-primary {
+            color: $blue-300;
+            border-color: $blue-300;
+            &:hover {
+                color: $blue-200;
+                border-color: $blue-200;
+            }
+        }
+    }
+    &.btn-contained {
+        background-color: transparent;
+        &.btn-white {
+            color: $gray-400;
+            background-color: $white;
+            border-color: $white;
+            &:hover {
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -9,38 +9,172 @@
   <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
-  <main>
-    <figure class="book">
-      <ul class="book__front">
-        <li>
-          <div class="book__cover">
-            <div class="cover__intro h1">{{ 代表書籍標題 }}</div>
-            <div class="cover__intro h5">{{ 代表書籍介紹 }}</div>
-            <img src="assets/images/05.jpg" width="150" alt="{{ 代表書籍標題 }}">
+  <header>
+    <div class="container pt-md-40 pb-md-15 py-10 px-md-30">
+      <button type="button" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <h1 class="sr-only">天下雜誌出版</h1>
+      <img src="assets/images/logo.svg" height="50" alt="天下雜誌出版 Logo">
+      <div class="collapse-nav ms-auto">
+        <ul class="keywords">
+          <li><a href="#!">大師帶你讀</a></li>
+          <li><a href="#!">如何避開地雷股</a></li>
+          <li><a href="#!">行銷5.0</a></li>
+        </ul>
+        <form class="search-group">
+          <input type="text" class="px-15 py-10" placeholder="請輸入關鍵字">
+          <button type="submit" class="px-15 py-10">
+            <span class="material-icons">
+              search
+            </span>
+          </button>
+        </form>
+      </div>
+      <button type="submit" class="open-search p-10 ms-auto">
+        <span class="material-icons">
+          search
+        </span>
+      </button>
+    </div>
+  </header>
+  <div class="black"></div>
+  <nav>
+    <ul class="master">
+      <li>
+        <a href="#!">最新動態</a>
+      </li>
+      <li>
+        <a href="#!">書籍</a>
+        <button type="button" class="open-block">
+          <span class="material-icons">
+            keyboard_arrow_down
+          </span>
+        </button>
+        <div class="block py-30">
+          <div class="container">
+            <div>
+              <a class="btn btn-outlined btn-primary" href="#!">最新出版</a>
+            </div>
+            <ul>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+            </ul>
+            <div class="banner">
+              <a href="#!">
+                <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
+              </a>
+            </div>
           </div>
-        </li>
-        <li></li>
-      </ul>
-      <ul class="book__page">
-        <li></li>
-        <li>
-          <a href="#">
-            <span>成功法</span>主題
-          </a>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <ul class="book__back">
-        <li></li>
-        <li></li>
-      </ul>
-      <ul class="book__spine">
-        <li></li>
-        <li></li>
-      </ul>
-    </figure>
+        </div>
+      </li>
+      <li>
+        <a href="#!">作者</a>
+        <button type="button" class="open-block">
+          <span class="material-icons">
+            keyboard_arrow_down
+          </span>
+        </button>
+        <div class="block py-30">
+          <div class="container">
+            <div>
+              <a class="btn btn-outlined btn-primary" href="#!">華文作者</a>
+              <a class="btn btn-outlined btn-primary" href="#!">外文作者</a>
+            </div>
+            <ul>
+              <li><a class="btn btn-contained btn-white" href="#!">賽門・西奈克</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">彼得・杜拉克</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">克雷頓．克里斯汀生</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">稻盛和夫</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
+            </ul>
+            <div class="banner">
+              <a href="#!">
+                <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#!">閱讀</a>
+        <button type="button" class="open-block">
+          <span class="material-icons">
+            keyboard_arrow_down
+          </span>
+        </button>
+        <div class="block py-30">
+          <div class="container">
+            <div>
+              <a class="btn btn-outlined btn-primary" href="#!">精選閱讀</a>
+            </div>
+            <ul>
+              <li><a class="btn btn-contained btn-white" href="#!">經營管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">經濟趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">科技趨勢</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">勵志</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">健康</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">教育學習</a></li>
+              <li><a class="btn btn-contained btn-white" href="#!">社會</a></li>
+            </ul>
+            <div class="banner">
+              <a href="#!">
+                <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#!">關於我們</a>
+      </li>
+      <li>
+        <a href="#!">追蹤我們</a>
+        <button type="button" class="open-block">
+          <span class="material-icons">
+            keyboard_arrow_down
+          </span>
+        </button>
+        <div class="block py-30">
+          <div class="container">
+            <div>
+              <a class="btn btn-outlined btn-primary" href="#!">訂閱電子報</a>
+              <a class="btn btn-outlined btn-primary" href="#!">加入讀者俱樂部</a>
+              <a class="btn btn-outlined btn-primary" href="#!">追蹤 Instgram</a>
+            </div>
+            <div class="banner">
+              <a href="#!">
+                <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
+              </a>
+              <a href="#!">
+                <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <main>
   </main>
 </body>
 </html>

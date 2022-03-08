@@ -1,7 +1,7 @@
 $hamburger: (
-  width: 20px,
-  unit:  3px,
-  gap:   4px
+  width:  18px,
+  unit:   3px,
+  gap:    3px
 );
 
 .hamburger {
@@ -11,11 +11,15 @@ $hamburger: (
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
   span {
     display: block;
     width: 100%;
     height: map-get($hamburger, unit);
-    background-color: $gray-500;
+    background-color: $dark;
+    border-radius: 10px;
     + span {
       margin-top: map-get($hamburger, gap);
     }

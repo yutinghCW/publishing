@@ -1,0 +1,39 @@
+.open-search {
+  background-color: transparent;
+  border: 0;
+  appearance: none;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+  @include media-breakpoint-down(md) {
+    margin-right: -10px;
+  }
+  span {
+    display: block;
+    font-size: $h2*1.2;
+    font-weight: bold;
+  }
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  input {
+    max-width: 300px;
+    width: 100%;
+    font-size: $h4;
+    line-height: $h2;
+    background-color: $gray-100;
+    border: 0;
+  }
+  button {
+    background-color: $gray-100;
+    border: 0;
+    appearance: none;
+    span {
+        display: block;
+        font-size: $h2;
+        font-weight: bold;
+    }
+  }
+}

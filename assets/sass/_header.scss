@@ -1,0 +1,48 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    border-bottom: 1px solid $gray-100;
+    @include media-breakpoint-up(md) {
+      align-items: flex-end;
+    }
+    img {
+      display: block;
+    }
+  }
+  .collapse-nav {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+    }
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  ul.keywords {
+    display: flex;
+    column-gap: 20px;
+    @include list(0, 10px 0, none);
+    li {
+      font-size: $h4;
+      @include media-breakpoint-up(md) {
+        font-size: $h5;
+      }
+      a {
+        color: $gray-300;
+        &::before {
+          @include beforeafter('#', inline);
+        }
+        &:hover {
+          color: $gray-400;
+        }
+      }
+    }
+  }
+}
