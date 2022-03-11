@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
-<body>
+<body class="index-page">
   <header>
     <div class="container pt-md-40 pb-md-15 py-10 px-md-30">
       <button type="button" class="hamburger">
@@ -17,7 +18,9 @@
         <span></span>
       </button>
       <h1 class="sr-only">天下雜誌出版</h1>
-      <img src="assets/images/logo.svg" height="50" alt="天下雜誌出版 Logo">
+      <a href="#!" class="brand">
+        <img src="assets/images/logo.svg" height="50" alt="天下雜誌出版 Logo">
+      </a>
       <div class="collapse-nav ms-auto">
         <ul class="keywords">
           <li><a href="#!">大師帶你讀</a></li>
@@ -27,16 +30,12 @@
         <form class="search-group">
           <input type="text" class="px-15 py-10" placeholder="請輸入關鍵字">
           <button type="submit" class="px-15 py-10">
-            <span class="material-icons">
-              search
-            </span>
+            <i class="icon icon-search"></i>
           </button>
         </form>
       </div>
-      <button type="submit" class="open-search p-10 ms-auto">
-        <span class="material-icons">
-          search
-        </span>
+      <button type="submit" class="open-search px-10 ms-auto">
+        <i class="icon icon-search"></i>
       </button>
     </div>
   </header>
@@ -49,30 +48,33 @@
       <li>
         <a href="#!">書籍</a>
         <button type="button" class="open-block">
-          <span class="material-icons">
-            keyboard_arrow_down
-          </span>
+          <i class="icon icon-arrow-down"></i>
         </button>
         <div class="block py-30">
           <div class="container">
-            <div>
+            <div class="anchor">
               <a class="btn btn-outlined btn-primary" href="#!">最新出版</a>
             </div>
-            <ul>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-            </ul>
+            <div class="recommend">
+              <ul>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">創新趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+              </ul>
+              <div class="spec-button mt-md-auto mt-20">
+                <a href="#!" class="btn btn-text btn-black btn-decoration mx-auto">瀏覽所有主題</a>
+              </div>
+            </div>
             <div class="banner">
               <a href="#!">
                 <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
@@ -84,24 +86,27 @@
       <li>
         <a href="#!">作者</a>
         <button type="button" class="open-block">
-          <span class="material-icons">
-            keyboard_arrow_down
-          </span>
+          <i class="icon icon-arrow-down"></i>
         </button>
         <div class="block py-30">
           <div class="container">
-            <div>
+            <div class="anchor">
               <a class="btn btn-outlined btn-primary" href="#!">華文作者</a>
               <a class="btn btn-outlined btn-primary" href="#!">外文作者</a>
             </div>
-            <ul>
-              <li><a class="btn btn-contained btn-white" href="#!">賽門・西奈克</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">彼得・杜拉克</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">克雷頓．克里斯汀生</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">稻盛和夫</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
-            </ul>
+            <div class="recommend">
+              <ul>
+                <li><a class="btn btn-contained btn-white" href="#!">賽門・西奈克</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">彼得・杜拉克</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">克雷頓．克里斯汀生</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">稻盛和夫</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">蔡壁名</a></li>
+              </ul>
+              <div class="spec-button mt-md-auto mt-20">
+                <a href="#!" class="btn btn-text btn-black btn-decoration mx-auto">瀏覽所有作者</a>
+              </div>
+            </div>
             <div class="banner">
               <a href="#!">
                 <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
@@ -113,29 +118,32 @@
       <li>
         <a href="#!">閱讀</a>
         <button type="button" class="open-block">
-          <span class="material-icons">
-            keyboard_arrow_down
-          </span>
+          <i class="icon icon-arrow-down"></i>
         </button>
         <div class="block py-30">
           <div class="container">
-            <div>
+            <div class="anchor">
               <a class="btn btn-outlined btn-primary" href="#!">精選閱讀</a>
             </div>
-            <ul>
-              <li><a class="btn btn-contained btn-white" href="#!">經營管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">經濟趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">科技趨勢</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">勵志</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">健康</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">教育學習</a></li>
-              <li><a class="btn btn-contained btn-white" href="#!">社會</a></li>
-            </ul>
+            <div class="recommend">
+              <ul>
+                <li><a class="btn btn-contained btn-white" href="#!">經營管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">經濟趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">科技趨勢</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">財經管理</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">勵志</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">健康</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">職場技能</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">教育學習</a></li>
+                <li><a class="btn btn-contained btn-white" href="#!">社會</a></li>
+              </ul>
+              <div class="spec-button mt-md-auto mt-20">
+                <a href="#!" class="btn btn-text btn-black btn-decoration mx-auto">瀏覽所有閱讀</a>
+              </div>
+            </div>
             <div class="banner">
               <a href="#!">
                 <img src="https://dummyimage.com/300x250/ccc/999" alt="banner">
@@ -150,13 +158,11 @@
       <li>
         <a href="#!">追蹤我們</a>
         <button type="button" class="open-block">
-          <span class="material-icons">
-            keyboard_arrow_down
-          </span>
+          <i class="icon icon-arrow-down"></i>
         </button>
         <div class="block py-30">
           <div class="container">
-            <div>
+            <div class="anchor">
               <a class="btn btn-outlined btn-primary" href="#!">訂閱電子報</a>
               <a class="btn btn-outlined btn-primary" href="#!">加入讀者俱樂部</a>
               <a class="btn btn-outlined btn-primary" href="#!">追蹤 Instgram</a>
@@ -175,6 +181,719 @@
     </ul>
   </nav>
   <main>
+    <section class="opening">
+      <div class="container px-0">
+        <div class="swiper swiper-opening">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#!">
+                <img src="https://dummyimage.com/1280x360/eee/999" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-opening-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="slogan">
+      <div class="container py-20">
+        <i class="icon icon-glass"></i>
+        <p class="my-0 d-md-block d-none">
+          一刻靜讀  趨勢‧知識‧思考‧態度 ——【天下雜誌出版電子報】 
+        </p>
+        <p class="my-0 d-md-none">
+          天下雜誌出版電子報 
+        </p>
+        <a href="#!" class="btn btn-text btn-blue btn-decoration ms-md-0 ms-auto">
+          <b>立即訂閱</b>
+        </a>
+      </div>
+    </section>
+    <section class="lastest py-40">
+      <div class="container px-md-30 py-10">
+        <h2 class="title-decoration fw-light mt-0 mb-30">新書出版</h2>
+        <div class="row">
+          <div class="position-relative px-md-40 px-0">
+            <div class="swiper swiper-lastest cards">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <!-- <img src="https://m.media-amazon.com/images/I/41sSS9ENqlL.jpg" alt=""> -->
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      設計思考X顧客不可或缺的需求=成功商業模式的獲利核心
+                    </a>
+                    <div class="card-author h5">亞歷山大‧奧斯瓦爾德、伊夫‧比紐赫、葛瑞格‧柏納達、亞倫...等</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      建中名師親授，克服閱讀萬字長文的障礙，快速抓到重點，學會了比補習更有效
+                    </a>
+                    <div class="card-author h5">黃春木</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      75年，守護島嶼的路行者
+                    </a>
+                    <div class="card-author h5">張雅琳、王宣喬、曹憶雯</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      啟動探究思考的關鍵
+                    </a>
+                    <div class="card-author h5">藍偉瑩</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+                <div class="swiper-slide card-book">
+                  <a class="card-image" href="#!">
+                    <img src="https://dummyimage.com/180x200/aaa/999" alt="">
+                  </a>
+                  <div class="card-body pt-10">
+                    <a href="#!" class="card-title h4 mb-5">
+                      高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密
+                    </a>
+                    <div class="card-author h5">里德‧海斯汀、艾琳‧梅爾</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-lastest-pagination d-md-block d-none"></div>
+            </div>
+            <div class="swiper-lastest-button-prev d-md-block d-none">
+              <i class="icon icon-arrow-left"></i>
+            </div>
+            <div class="swiper-lastest-button-next d-md-block d-none">
+              <i class="icon icon-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reading position-relative py-40">
+      <svg class="reading-top" width="600" height="25" viewBox="0 0 600 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M600 0C455.5 0.5 334.78 1.67 300 25C265.22 1.67 144.5 0.5 0 0H600Z" fill="white"/>
+      </svg>        
+      <div class="container px-md-30 pt-40 pb-10">
+        <h2 class="title-decoration fw-light mt-0 mb-40">精選閱讀</h2>
+        <div class="col-12 px-md-40">
+          <div class="swiper swiper-reading cards cards-reading">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-reading">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/250x185/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-md-10 py-md-15 py-10 px-15">
+                  <div class="card-lable h5 mt-0 mb-5">香藥草的自癒力</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    廚房裡就有！肉桂、大蒜、芹菜是最佳的的天然排毒聖品
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-reading-pagination d-md-none mt-10"></div>
+          </div>
+        </div>
+      </div>
+      <svg class="reading-bottom" width="600" height="25" viewBox="0 0 600 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M600 0C455.5 0.5 334.78 1.67 300 25C265.22 1.67 144.5 0.5 0 0H600Z" fill="#F5F5F5"/>
+      </svg>
+    </section>
+    <section class="author py-40">
+      <div class="container px-md-30 pt-40 pb-10">
+        <h2 class="title-decoration fw-light mt-0 mb-40">本月名家</h2>
+        <div class="row px-md-40">
+          <div class="swiper swiper-author cards pt-5">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card-author">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/150x150/aaa/999" alt="">
+                </a>
+                <div class="card-body pt-10 text-center">
+                  <a href="#!" class="card-title h4 serif my-0">
+                    凱莉‧紐金特<br/>Carrie Nugent
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-author card-author-ing">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/150x150/aaa/999" alt="">
+                </a>
+                <div class="card-body pt-10 text-center">
+                  <div class="card-label h6 mt-0 mb-10">活動中</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    凱莉‧紐金特<br/>Carrie Nugent
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-author card-author-ing">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/150x150/aaa/999" alt="">
+                </a>
+                <div class="card-body pt-10 text-center">
+                  <div class="card-label h6 mt-0 mb-10">活動中</div>
+                  <a href="#!" class="card-title h4 serif my-0">
+                    凱莉‧紐金特<br/>Carrie Nugent
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-author">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/150x150/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-10 text-center">
+                  <a href="#!" class="card-title h4 serif my-0">
+                    凱莉‧紐金特<br/>Carrie Nugent
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide card-author">
+                <a class="card-image" href="#!">
+                  <img src="https://dummyimage.com/150x150/aaa/999" alt="">
+                </a>
+                <div class="card-body mt-10 text-center">
+                  <a href="#!" class="card-title h4 serif my-0">
+                    凱莉‧紐金特<br/>Carrie Nugent
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="video py-40">
+      <div class="container px-md-30 py-10">
+        <h2 class="title-decoration fw-light mt-0 mb-40">影音推薦</h2>
+        <div class="col-12 px-md-40">
+          <div class="cards cards-video px-md-30">
+            <div class="card-video">
+              <a class="card-image" href="#!">
+                <img src="https://dummyimage.com/480x270/aaa/999" alt="">
+                <i class="icon icon-play"></i>
+              </a>
+              <div class="card-body">
+                <a class="card-title h4 mt-10 mb-0" href="#!">【痛恨競爭者？可敬的對手也是進步的推手 | 無限思維#3：可敬的對手】</a>
+              </div>
+            </div>
+            <div class="card-video">
+              <a class="card-image" href="#!">
+                <img src="https://dummyimage.com/480x270/aaa/999" alt="">
+                <i class="icon icon-play"></i>
+              </a>
+              <div class="card-body">
+                <a class="card-title h4 mt-10 mb-0" href="#!">【痛恨競爭者？可敬的對手也是進步的推手 | 無限思維#3：可敬的對手】</a>
+              </div>
+            </div>
+            <div class="card-video">
+              <a class="card-image" href="#!">
+                <img src="https://dummyimage.com/480x270/aaa/999" alt="">
+                <i class="icon icon-play"></i>
+              </a>
+              <div class="card-body">
+                <a class="card-title h4 mt-10 mb-0" href="#!">【痛恨競爭者？可敬的對手也是進步的推手 | 無限思維#3：可敬的對手】</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="topic py-40">
+      <div class="container px-md-30 py-10">
+        <h2 class="title-decoration fw-light mt-0 mb-40">主題推薦</h2>
+        <div class="col-12 px-md-40 pb-40">
+          <div class="row px-md-30">
+            <div class="position-relative px-md-40 px-0">
+              <div class="swiper swiper-topic cards cards-topic">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide card-topic">
+                    <a class="card-image px-15 pt-15" href="#!">
+                      <img src="https://dummyimage.com/250x250/aaa/999" alt="">
+                    </a>
+                    <div class="card-body">
+                      <a href="#!" class="card-title h4 serif my-0 py-10">
+                        財經管理
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-topic-button-prev d-md-block d-none">
+                <i class="icon icon-arrow-left"></i>
+              </div>
+              <div class="swiper-topic-button-next d-md-block d-none">
+                <i class="icon icon-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="newsletter py-40">
+      <div class="container px-md-30 py-10">
+        <h2 class="title-spacing-1 text-center fw-normal mb-20">訂閱天下雜誌出版電子報</h2>
+        <p class="text-center fw-light title-spacing-1 mt-20 mb-30">
+          每週一刻靜心閱讀，<br/>
+          <span class="d-inline-block">挑選你需要的財經趨勢、</span><span class="d-inline-block">商管新論、</span><span class="d-inline-block">工作與生活管理的技術，</span><br/>
+          打開心視野，做個有觀點的人。
+        </p>
+        <a href="#!"
+          class="btn btn-contained btn-primary px-40 mx-auto"
+        >瞭解更多</a>
+      </div>
+    </section>
   </main>
+  <footer class="pt-40 pb-30 px-20">
+    <div class="px-md-0 px-20">
+      <div class="container px-md-30 pt-10">
+        <div class="row px-md-40 px-sm-20">
+          <div class="col-md">
+            <div class="row">
+              <div class="col-lg col-md-auto col-6">
+                <h4 class="mt-0 mb-20">天下雜誌出版</h4>
+                <ul>
+                  <li><a href="#!" class="btn btn-text btn-black btn-decoration">關於我們</a></li>
+                  <li><a href="#!" class="btn btn-text btn-black btn-decoration">聯絡我們</a></li>
+                  <li><a href="#!" class="btn btn-text btn-black btn-decoration">內容授權</a></li>
+                </ul>
+              </div>
+              <div class="col-lg col-md-auto col-6">
+                <h4 class="mt-0 mb-20">友站連結</h4>
+                <ul>
+                  <li><a href="#!" class="btn btn-text btn-black btn-decoration">天下雜誌</a></li>
+                  <li><a href="#!" class="btn btn-text btn-black btn-decoration">天下網路書店</a></li>
+                </ul>
+              </div>
+              <div class="col-lg col-md-auto col-12">
+                <h4 class="mt-0 mb-20">追蹤天下雜誌出版</h4>
+                <ul class="social-group">
+                  <li>
+                    <a href="#!" class="btn btn-text btn-black">
+                      <i class="icon icon-facebook"></i>
+                    </a>
+                    <a href="#!" class="btn btn-text btn-black btn-decoration">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="btn btn-text btn-black">
+                      <i class="icon icon-instagram"></i>
+                    </a>
+                    <a href="#!" class="btn btn-text btn-black btn-decoration">Instgram</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="btn btn-text btn-black">
+                      <i class="icon icon-newsletter"></i>
+                    </a>
+                    <a href="#!" class="btn btn-text btn-black btn-decoration">電子報</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <h4 class="mt-0 mb-20">客服資訊</h4>
+            <ul>
+              <li>
+                讀者服務專線：<a href="tel:0226620332" class="btn btn-text btn-black btn-decoration">886-2-2662-0332</a>
+              </li>
+              <li>
+                服務時間：週一至週五 9:00－17:30
+              </li>
+              <li>
+                客服信箱：<a href="mailto:bill@cw.com.tw" class="btn btn-text btn-black btn-decoration">bill@cw.com.tw</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 h6 text-center title-spacing-1 my-0">
+      Copyright © 天下雜誌出版 All rights reserved
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    var swiperOpening = new Swiper(".swiper-opening", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      centeredSlides: true,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-opening-pagination",
+        clickable: true,
+      },
+    });
+    var swiperLastest = new Swiper(".swiper-lastest", {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-lastest-pagination",
+        clickable: true,
+      },
+      navigation: {
+        prevEl: '.swiper-lastest-button-prev',
+        nextEl: '.swiper-lastest-button-next',
+      },
+      breakpoints: {
+        540: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+      },
+    });
+    var swiperTopic = new Swiper(".swiper-topic", {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 15,
+      pagination: {
+        el: ".swiper-topic-pagination",
+        clickable: true,
+      },
+      navigation: {
+        prevEl: '.swiper-topic-button-prev',
+        nextEl: '.swiper-topic-button-next',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+      },
+    });
+    var swiperAuthor = new Swiper(".swiper-author", {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 0,
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 25,
+        },
+        1024: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+      },
+    });
+    var swiperReading = new Swiper(".swiper-reading", {
+      slidesPerView: 1,
+      slidesPerGroup: 4,
+      spaceBetween: 10,
+      grid: {
+        rows: 4,
+      },
+      pagination: {
+        el: ".swiper-reading-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  </script>
 </body>
 </html>

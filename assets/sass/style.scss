@@ -1,23 +1,33 @@
 @import "import";
 @import "common";
 
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
-
 body {
   line-height: 1.5;
+  padding-top: 71px; // 10+50+10+1
+  @include media-breakpoint-up(md) {
+    padding-top: 171px; // 40+50+10+1+65
+  }
 }
+
+@import "font";
 
 @import "space";
 @import "container";
 @import "grid";
 
 // 書籍翻頁
-@import "swipe";
+// @import "swipe";
 @import "header";
-@import "hamburger";
+@import "footer";
+@import "icon";
 @import "search";
 @import "nav";
 @import "button";
+@import "title";
+@import "swiper";
+@import "card";
+@import "newsletter";
+@import "index";
 
 .black {
   position: fixed;
@@ -25,8 +35,15 @@ body {
   left: 0;
   background-color: $black;
   opacity: 0.5;
+  z-index: 1;
   &.opened {
     width: 100%;
     height: 100%;
   }
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }

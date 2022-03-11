@@ -1,12 +1,14 @@
 .btn {
     display: table;
-    padding: 7px 15px;
-    font-size: $h4;
     text-align: center;
-    border: 1px solid;
-    border-radius: 0.25rem;
-    @include media-breakpoint-up(md) {
-        padding: 10px 20px;
+    &.btn-outlined,
+    &.btn-contained {
+        padding: 7px 15px;
+        border: 1px solid;
+        border-radius: 0.25rem;
+        @include media-breakpoint-up(md) {
+            padding: 10px 20px;
+        }
     }
     &.btn-outlined {
         background-color: transparent;
@@ -20,13 +22,40 @@
         }
     }
     &.btn-contained {
-        background-color: transparent;
         &.btn-white {
             color: $gray-400;
             background-color: $white;
             border-color: $white;
             &:hover {
                 font-weight: 500;
+            }
+        }
+        &.btn-primary {
+            color: $white;
+            background-color: $blue-300;
+            border-color: $blue-300;
+            &:hover {
+                background-color: $blue-200;
+                border-color: $blue-200;
+            }
+        }
+    }
+    &.btn-text {
+        &.btn-decoration {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        &.btn-black {
+            color: $gray-400;
+            &:hover {
+                color: $black;
+            }
+        }
+        &.btn-blue {
+            color: $blue-200;
+            border-bottom-color: $blue-200;
+            &:hover {
+                color: $blue-300;
             }
         }
     }

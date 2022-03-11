@@ -1,16 +1,24 @@
 nav {
+  position: fixed;
+  background-color: $white;
+  border-bottom: 1px solid $gray-200;
   @include media-breakpoint-up(md) {
-    margin-top: 106px; // 50+40+10+1
+    top: 106px; // 40+50+10+1
+    width: 100%;
+    z-index: 2;
   }
   @include media-breakpoint-down(md) {
-    display: none;
-    position: fixed;
     top: 0%;
     left: 0;
     width: calc(100% - 40px);
     height: 100%;
-    background-color: $white;
+    transition: transform 0.5s $timing-function;
+    transform: translateX(-100%);
     overflow: scroll;
+    z-index: 1;
+    &.opened {
+      transform: translateX(0%);
+    }
   }
   ul {
     @include list(0, 0, none);
@@ -47,15 +55,23 @@ nav {
         position: absolute;
         top: 0;
         right: 0;
-        padding: 13px 40px 13px 10px;
+        padding: 0;
+        color: $gray-300;
         background-color: transparent;
         border: 0;
         appearance: none;
         @include media-breakpoint-up(md) {
           display: none;
         }
-        span {
+        i.icon {
           display: block;
+          padding: 17px 40px;
+          transition: transform 0.3s;
+        }
+        &.opened {
+          i.icon {
+            transform: rotate(180deg);
+          }
         }
       }
       > .block {
@@ -70,16 +86,18 @@ nav {
         @include media-breakpoint-down(md) {
           padding-left: 10px;
           padding-right: 10px;
+          &.opened {
+            display: block;
+          }
         }
         .container {
           max-width: 1130px;
           @include media-breakpoint-up(md) {
             display: flex;
-            align-items: flex-start;
           }
           > div {
             white-space: nowrap;
-            &:not(.banner) {
+            &.anchor {
               .btn {
                 @include media-breakpoint-down(md) {
                   width: 100%;
@@ -88,6 +106,32 @@ nav {
                 +.btn {
                   margin-top: 10px;
                 }
+              }
+            }
+            &.recommend {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: space-between;
+              @include media-breakpoint-up(md) {
+                margin-left: 40px;
+                margin-right: 100px;
+              }
+              > ul {
+                display: flex;
+                flex-wrap: wrap;
+                @include media-breakpoint-up(md) {
+                  gap: 10px;
+                }
+                @include media-breakpoint-down(md) {
+                  margin-top: 20px;
+                  gap: 20px 10px;
+                }
+              }
+              > .spec-button {
+                width: 100%;
+                padding-top: 12px;
+                padding-bottom: 7px;
+                border-top: 1px solid $gray-200;
               }
             }
             &.banner {
@@ -105,20 +149,6 @@ nav {
                   height: 220px;
                 }
               }
-            }
-          }
-          > ul {
-            display: flex;
-            flex-wrap: wrap;
-            @include media-breakpoint-up(md) {
-              width: calc(100% - 250px);
-              margin-left: 40px;
-              margin-right: 100px;
-              gap: 10px;
-            }
-            @include media-breakpoint-down(md) {
-              margin-top: 20px;
-              gap: 20px 10px;
             }
           }
         }
