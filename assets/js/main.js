@@ -1,5 +1,16 @@
-$('.hamburger').on('click', () => {
+$('.hamburger').click(function() {
   $('.hamburger, header, nav, .black').toggleClass('opened');
+});
+
+$('.open-search').click(function() {
+  $('.collapse-nav').slideToggle({
+    start: function () {
+      $(this).css({
+        display: "flex"
+      })
+    }
+  });
+  $(this).children('i').toggleClass('icon-close');
 });
 
 $('.open-block').click(function() {

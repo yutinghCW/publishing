@@ -12,6 +12,7 @@ $icon-instagram:    "\e904";
 $icon-facebook:     "\e905";
 $icon-book:         "\e908";
 $icon-search:       "\e903";
+$icon-close:        "\e90d";
 $icon-arrow-left:   "\e900";
 $icon-arrow-right:  "\e901";
 $icon-arrow-up:     "\e902";
@@ -87,6 +88,11 @@ $icon-arrow-down:   "\e90c";
 .icon-search {
   &:before {
     content: $icon-search; 
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
   }
 }
 .icon-arrow-left {

@@ -3469,9 +3469,9 @@ header.opened .container::before {
 
 @media (min-width: 1024px) {
   header .collapse-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -3483,6 +3483,17 @@ header.opened .container::before {
 @media (max-width: 1023px) {
   header .collapse-nav {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 20px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    background-color: #ffffff;
+    z-index: 1;
   }
 }
 
@@ -3720,6 +3731,10 @@ footer .h6 {
   content: "";
 }
 
+.icon-close:before {
+  content: "";
+}
+
 .icon-arrow-left:before {
   content: "";
 }
@@ -3753,15 +3768,31 @@ footer .h6 {
 
 @media (max-width: 1023px) {
   .open-search {
+    position: relative;
     margin-right: -10px;
     padding-top: 13px;
     padding-bottom: 13px;
+    z-index: 1;
+  }
+  .opened .open-search {
+    z-index: -1;
   }
 }
 
 .open-search i.icon {
   display: block;
-  font-size: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .open-search i.icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .open-search i.icon {
+    font-size: 1.25rem;
+  }
 }
 
 .search-group {
@@ -3771,6 +3802,12 @@ footer .h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .search-group {
+    padding: 10px 0;
+  }
 }
 
 .search-group input {
@@ -3791,7 +3828,7 @@ footer .h6 {
           appearance: none;
 }
 
-.search-group button span {
+.search-group button i.icon {
   display: block;
   font-size: 1.25rem;
 }
