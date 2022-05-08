@@ -39,11 +39,30 @@
                 border-color: $blue-200;
             }
         }
+        &.btn-gray {
+            color: $blue-200;
+            background-color: $gray-100;
+            border-color: $gray-100;
+        }
+        &.btn-dark {
+            color: $gray-400;
+            background-color: $gray-100;
+            border-color: $gray-100;
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+    &.btn-sm {
+        padding: 3px 10px;
     }
     &.btn-text {
+        display: inline;
+        text-align: initial;
         &.btn-decoration {
             text-decoration: underline;
             text-underline-position: under;
+            text-decoration-thickness: from-font;
         }
         &.btn-black {
             color: $gray-400;

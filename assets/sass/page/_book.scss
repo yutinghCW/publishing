@@ -1,0 +1,176 @@
+.edit-block {
+    .content,
+    .table-of-content {
+        overflow: hidden;
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .content {
+        max-height: 365px;
+    }
+    .table-of-content {
+        max-height: 240px;
+    }
+    button.more {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        &::before {
+            @include beforeafter('', block);
+            position: absolute;
+            bottom: calc(100% - 1px);
+            width: 100%;
+            height: 15px;
+            background-color: $white;
+            background: $white;
+            background: linear-gradient(0deg, rgba($white, 1) 0%, rgba($white, 0) 100%);
+        }
+    }
+}
+
+.online-block {
+    margin-bottom: 50px;
+    ul {
+        @include list(0, 0, none);
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 20px;
+    }
+    > ul {
+        > li {
+            + li {
+                margin-top: 10px;
+            }
+            > .title {
+                display: flex;
+                align-items: center;
+                span {
+                    &.dot {
+                        width: 10px;
+                        height: 10px;
+                        margin-left: 15px;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                        background-color: $orange-200;
+                    }
+                    &.txt {
+                        color: $gray-400;
+                    }
+                }
+            }
+            > ul {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.book-page {
+    .reading {
+        background-color: $gray-100;
+        @include media-breakpoint-down(md) {
+            margin-left: -$container-padding-x;
+            margin-right: -$container-padding-x;
+        }
+        .reading-top,
+        .reading-bottom {
+            position: absolute;
+            left: 50%;
+            height: 10px;
+            transform: translateX(-50%);
+        }
+        .reading-top {
+            top: 0;
+        }
+        .reading-bottom {
+            top: 100%;
+        }
+    }
+    hr {
+        border: solid $gray-200;
+        border-width: 1px 0 0;
+    }
+}
+
+.container-summary {
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 370px 1fr;
+    }
+    .breadcrumb {
+        grid-column-start: 0;
+        grid-column-end: span 2;
+    }
+    .subtitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .label {
+            color: $white;
+            background-color: $orange-200;
+            border-radius: 2em;
+            @include media-breakpoint-up(md) {
+                padding: 3px 10px;
+            }
+        }
+        .text {
+            color: $black;
+            line-height: 1.3;
+        }
+    }
+    hr {
+        border-color: $gray-100;
+    }
+}
+
+.container-detail {
+    padding-top: 60px;
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 1030px 1fr;
+    }
+    aside {
+        @include media-breakpoint-up(md) {
+            position: sticky;
+            top: 200px;
+            left: 0;
+            height: fit-content;
+        }
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+        nav {
+            ol {
+                @include list(0, 0, none);
+                li {
+                    text-align: right;
+                    margin-bottom: 20px;
+                    a {
+                        &.btn-text {
+                            display: inline-table;
+                            color: $gray-300;
+                            font-size: $h5;
+                            &:hover, &.active {
+                                color: $black;
+                            }
+                        }
+                        &.btn-top {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 30px;
+                            height: 30px;
+                            margin-top: 20px;
+                            color: $gray-400;
+                            background-color: $gray-100;
+                            border-radius: 50%;
+                            box-shadow: 0 1px 2px rgba($black, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

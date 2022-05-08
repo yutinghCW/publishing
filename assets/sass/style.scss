@@ -27,23 +27,34 @@ body {
 @import "swiper";
 @import "card";
 @import "newsletter";
-@import "index";
+@import "embed";
+@import "modal";
+@import "breadcrumb";
+@import "more";
+
+@import "page/index";
+@import "page/book";
 
 .black {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $black;
+  background-color: darken($black, 5%);
   opacity: 0.5;
   z-index: 1;
   &.opened {
     width: 100%;
     height: 100%;
   }
+  &.modal-black {
+    z-index: 5;
+  }
 }
 
 main {
   position: relative;
-  overflow: hidden;
   z-index: 0;
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+  }
 }

@@ -1,5 +1,7 @@
 .swiper {
-  &.swiper-lastest {
+  &.swiper-latest,
+  &.swiper-series,
+  &.swiper-book {
     @include media-breakpoint-down(md) {
       padding-left: 20px;
       padding-right: 60px;
@@ -40,24 +42,20 @@
       }
     }
   }
-  .swiper-lastest-pagination {
+  .swiper-latest-pagination {
     .swiper-pagination-bullet {
-      background-color: $gray-300;
+      background-color: $gray-200;
       &.swiper-pagination-bullet-active {
-        background-color: $gray-200;
+        background-color: $gray-300;
       }
     }
   }
 }
 
-.swiper-lastest-button-prev,
-.swiper-lastest-button-next,
-.swiper-topic-button-prev,
-.swiper-topic-button-next {
+%swiper-nav {
   position: absolute;
   top: 50%;
   color: $gray-200;
-  font-size: 2.5rem;
   transform: translateY(-50%);
   cursor: pointer;
   &.swiper-button-disabled {
@@ -65,11 +63,47 @@
     cursor: not-allowed;
   }
 }
-.swiper-lastest-button-prev,
+
+.swiper-book-master-button-prev,
+.swiper-book-master-button-next,
+.swiper-book-thumbnail-button-prev,
+.swiper-book-thumbnail-button-next,
+.swiper-latest-button-prev,
+.swiper-latest-button-next,
+.swiper-book-button-prev,
+.swiper-book-button-next,
+.swiper-series-button-prev,
+.swiper-series-button-next,
+.swiper-topic-button-prev,
+.swiper-topic-button-next {
+  @extend %swiper-nav;
+  font-size: 2.5rem;
+}
+.swiper-book-thumbnail-button-prev,
+.swiper-book-thumbnail-button-next {
+  @extend %swiper-nav;
+  font-size: 1.25rem;
+}
+
+.swiper-book-master-button-prev,
+.swiper-latest-button-prev,
+.swiper-book-button-prev,
+.swiper-series-button-prev,
 .swiper-topic-button-prev {
   left: -10px;
 }
-.swiper-lastest-button-next,
+.swiper-book-thumbnail-button-prev {
+  left: -5px;
+}
+
+.swiper-book-master-button-next,
+.swiper-book-thumbnail-button-next,
+.swiper-latest-button-next,
+.swiper-book-button-next,
+.swiper-series-button-next,
 .swiper-topic-button-next {
   right: -10px;
+}
+.swiper-book-thumbnail-button-next {
+  right: -5px;
 }
