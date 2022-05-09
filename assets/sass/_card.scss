@@ -189,6 +189,16 @@
     &.cards-digest {
         display: flex;
         flex-wrap: wrap;
+        &.ellipsis-block {
+            .card-digest {
+                &:nth-child(4) ~ .card-digest {
+                    display: none;
+                }
+            }
+            .more {
+                display: flex;
+            }
+        }
     }
     .card-digest {
         margin-bottom: 20px;
@@ -202,7 +212,6 @@
         a {
             @include media-breakpoint-down(md) {
                 display: flex;
-                align-items: center;
             }
         }
         .card-image {
@@ -333,6 +342,23 @@
             display: flex;
             flex-wrap: wrap;
         }
+        &.ellipsis-block {
+            .card-video {
+                @include media-breakpoint-up(md) {
+                    &:nth-child(3) ~ .card-video {
+                        display: none;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    &:nth-child(2) ~ .card-video {
+                        display: none;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+            }
+        }
     }
     .card-video {
         cursor: pointer;
@@ -347,6 +373,9 @@
             width: 100%;
             margin-top: 20px;
             &:first-child {
+                margin-top: 0;
+            }
+            @at-root .book-page #{&} {
                 margin-top: 0;
             }
         }
@@ -468,6 +497,28 @@
         @include media-breakpoint-up(md) {
             padding-left: 30px;
             padding-right: 30px;
+        }
+        &.ellipsis-block {
+            .card-item {
+                @include media-breakpoint-up(md) {
+                    &:nth-child(2) ~ .card-item {
+                        display: none;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    &:nth-child(1) ~ .card-item {
+                        display: none;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+            }
+        }
+        &.expand-block {
+            .collapse {
+                display: flex;
+            }
         }
         .card-item {
             display: grid;

@@ -1,6 +1,7 @@
-button.more {
+button.more,
+button.collapse {
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -19,3 +20,4 @@ button.more {
         background-color: transparent;
     }
 }
+
