@@ -5392,54 +5392,6 @@ nav.menu > ul > li > .block .container > div.banner a img {
   color: #4D4D4E;
 }
 
-.social-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 20px 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.social-group .social-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-  color: #4D4D4E;
-}
-
-@media (min-width: 1024px) {
-  .social-group .social-item {
-    min-width: 125px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .social-group .social-item {
-    width: calc((100% - 30px) / 2);
-  }
-}
-
-.social-group .social-item:hover {
-  color: #0F0F0F;
-}
-
-.social-group .social-item .icon {
-  font-size: 1.5rem;
-}
-
-.social-group .social-item .text {
-  text-decoration: underline;
-  text-underline-position: under;
-  text-decoration-thickness: from-font;
-}
-
 button.more,
 button.collapse {
   position: relative;
@@ -6281,6 +6233,54 @@ button.collapse {
 .article-page .reading {
   margin-left: -1.875rem;
   margin-right: -1.875rem;
+}
+
+.author-page .container-summary .social-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.author-page .container-summary .social-group .social-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  color: #4D4D4E;
+}
+
+@media (min-width: 1024px) {
+  .author-page .container-summary .social-group .social-item {
+    min-width: 125px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .author-page .container-summary .social-group .social-item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+
+.author-page .container-summary .social-group .social-item:hover {
+  color: #0F0F0F;
+}
+
+.author-page .container-summary .social-group .social-item .icon {
+  font-size: 1.5rem;
+}
+
+.author-page .container-summary .social-group .social-item .text {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: from-font;
 }
 
 .black {
