@@ -3,20 +3,21 @@
 $icomoon-font-family: "publishing" !default;
 $icomoon-font-path: "../fonts" !default;
 
-$icon-play:         "\e90b";
-$icon-link:         "\e90a";
+$icon-youtube:      "\e900";
+$icon-arrow-left:   "\e901";
+$icon-arrow-right:  "\e902";
+$icon-arrow-up:     "\e903";
+$icon-arrow-down:   "\e90c";
 $icon-glass:        "\e906";
 $icon-newsletter:   "\e907";
-$icon-twitter:      "\e909";
-$icon-instagram:    "\e904";
-$icon-facebook:     "\e905";
 $icon-book:         "\e908";
-$icon-search:       "\e903";
+$icon-play:         "\e90b";
 $icon-close:        "\e90d";
-$icon-arrow-left:   "\e900";
-$icon-arrow-right:  "\e901";
-$icon-arrow-up:     "\e902";
-$icon-arrow-down:   "\e90c";
+$icon-search:       "\e904";
+$icon-link:         "\e90a";
+$icon-facebook:     "\e905";
+$icon-instagram:    "\e909";
+$icon-twitter:      "\e90e";
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
@@ -78,6 +79,11 @@ $icon-arrow-down:   "\e90c";
 .icon-facebook {
   &:before {
     content: $icon-facebook; 
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube; 
   }
 }
 .icon-book {

@@ -22,7 +22,6 @@ $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function () {
 $('.hamburger').click(function() {
   $('.hamburger, header, nav, .black').toggleClass('opened');
 });
-
 $('.open-search').click(function() {
   $('.collapse-nav').slideToggle({
     start: function () {
@@ -33,7 +32,6 @@ $('.open-search').click(function() {
   });
   $(this).children('i').toggleClass('icon-close');
 });
-
 $('.open-block').click(function() {
   $(this).toggleClass('opened');
   $(this).siblings('.block').slideToggle();
@@ -83,7 +81,7 @@ $('.book-page .cards-author-intro').each(function() {
     $(this).removeClass('ellipsis-block');
   }
 });
-$('.book-page .cards-digest').each(function() {
+$('.book-page .cards-digest, .author-page .cards-digest').each(function() {
   let itemLength = $(this).children('.card-digest').length;
   if ( itemLength > 4 ) {
     $(this).addClass('ellipsis-block');
@@ -91,7 +89,7 @@ $('.book-page .cards-digest').each(function() {
     $(this).removeClass('ellipsis-block');
   }
 });
-$('.book-page .cards-video').each(function() {
+$('.book-page .cards-video, .author-page .cards-video').each(function() {
   let itemLength = $(this).children('.card-video').length;
   if ( width >= 1024 && itemLength > 3 ) {
     $(this).addClass('ellipsis-block');
@@ -99,6 +97,15 @@ $('.book-page .cards-video').each(function() {
     $(this).addClass('ellipsis-block');
   } else {
     $(this).removeClass('ellipsis-block');
+  }
+});
+$('.author-page .author-intro p').each(function() {
+  let introHeight = $(this).height();
+  console.log(introHeight);
+  if ( width < 1024 && introHeight > 1.5*6*16 ) {
+    $(this).parent().addClass('ellipsis-block');
+  } else {
+    $(this).parent().removeClass('ellipsis-block');
   }
 });
 
