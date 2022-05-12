@@ -2,4 +2,28 @@
     .container-summary {
         @import "../social";
     }
+    .col-img {
+        display: flex;
+        justify-content: flex-end;
+        background-color: $gray-100;
+        overflow: hidden;
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            width: 300px;
+            height: 300px;
+        }
+        img {
+            @include media-breakpoint-up(md) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 300px;
+            }
+            @include media-breakpoint-down(md) {
+                height: 220px;
+            }
+        }
+    }
 }

@@ -34,9 +34,14 @@ body {
 
 @import "page/index";
 @import "page/inner";
+@import "page/books";
 @import "page/book";
+@import "page/articles";
 @import "page/article";
+@import "page/authors";
 @import "page/author";
+@import "page/about";
+@import "page/error";
 
 .black {
   position: fixed;

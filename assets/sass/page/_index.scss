@@ -1,6 +1,9 @@
 @import "../opening";
 
 .index-page {
+  .opening {
+    overflow: hidden;
+  }
   .slogan {
     background-color: $gray-100;
     .container {

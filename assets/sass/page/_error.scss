@@ -1,0 +1,13 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    main {
+        .container {
+            max-width: 940px;
+        }
+    }
+    footer {
+        margin-top: auto;
+    }
+}

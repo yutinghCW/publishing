@@ -2,8 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include media-breakpoint-up(xs) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
     .social-item {
         display: flex;
         align-items: center;

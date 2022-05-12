@@ -101,6 +101,74 @@
             }
         }
     }
+    .card-books {
+        .card-head {
+            position: relative;
+            padding: 20px;
+            background-color: $gray-100;
+        }
+        .card-body {
+            line-height: 1.35;
+            h4 {
+                color: $gray-400;
+            }
+            span {
+                color: $gray-300;
+            }
+        }
+        .card-label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            padding: 3px 15px 2px 10px;
+            color: $white;
+            font-size: $h5;
+            font-weight: bold;
+            border-radius: 0 1em 1em 0;
+            z-index: 2;
+        }
+        .card-image {
+            position: relative;
+            // overflow: hidden;
+            &::before {
+                @include beforeafter('', block);
+                position: relative;
+                width: 100%;
+                padding-top: 105%;
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                max-width: 100%;
+                max-height: 100%;
+                box-shadow: 0 1px 6px rgba($gray-400, 0.1);
+                transform: translate(-50%, -50%);
+                transition: max-width 0.3s $timing-function, max-height 0.3s $timing-function;
+            }
+        }
+        &:hover {
+            .card-image img {
+                max-width: 105%;
+                max-height: 105%;
+            }
+        }
+        &.hot {
+            .card-label {
+                background-color: $orange-200;
+            }
+        }
+        &.new {
+            .card-label {
+                background-color: $blue-200;
+            }
+        }
+        &.soldout {
+            .card-label {
+                background-color: $gray-300;
+            }
+        }
+    }
     &.cards-reading {
         @include media-breakpoint-up(md) {
             height: 700px;
@@ -191,9 +259,25 @@
         display: flex;
         flex-wrap: wrap;
         &.ellipsis-block {
-            .card-digest {
-                &:nth-child(4) ~ .card-digest {
-                    display: none;
+            @at-root .cards-digest-type1#{&} {
+                .card-digest {
+                    &:nth-child(4) ~ .card-digest {
+                        display: none;
+                    }
+                }
+            }
+            @at-root .cards-digest-type2#{&} {
+                .card-digest {
+                    @include media-breakpoint-up(md) {
+                        &:nth-child(15) ~ .card-digest {
+                            display: none;
+                        }
+                    }
+                    @include media-breakpoint-down(md) {
+                        &:nth-child(12) ~ .card-digest {
+                            display: none;
+                        }
+                    }
                 }
             }
             .more {
@@ -202,17 +286,41 @@
         }
     }
     .card-digest {
-        margin-bottom: 20px;
+        @at-root .cards-digest-type1#{&} {
+            margin-bottom: 20px;
+        }
+        @at-root .cards-digest-type2#{&} {
+            margin-bottom: 40px;
+        }
         @include media-breakpoint-up(md) {
-            width: calc((100% - 60px) / 4);
             margin-right: 20px;
-            &:nth-child(4n) {
-                margin-right: 0;
+            @at-root .cards-digest-type1#{&} {
+                width: calc((100% - 60px) / 4);
+                &:nth-child(4n) {
+                    margin-right: 0;
+                }
+            }
+            @at-root .cards-digest-type2#{&} {
+                width: calc((100% - 80px) / 5);
+                &:nth-child(5n) {
+                    margin-right: 0;
+                }
+            }
+        }
+        @include media-breakpoint-down(md) {
+            @at-root .cards-digest-type2#{&} {
+                width: calc((100% - 20px) / 2);
+                margin-right: 20px;
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
             }
         }
         a {
             @include media-breakpoint-down(md) {
-                display: flex;
+                @at-root .cards-digest-type1#{&} {
+                    display: flex;
+                }
             }
         }
         .card-image {
@@ -220,7 +328,9 @@
             border: 5px solid $gray-200;
             overflow: hidden;
             @include media-breakpoint-down(md) {
-                width: 130px;
+                @at-root .cards-digest-type1#{&} {
+                    width: 130px;
+                }
             }
             &::before {
                 @include beforeafter('', block);
@@ -251,14 +361,67 @@
         .card-body {
             background-color: $white;
             @include media-breakpoint-down(md) {
-                width: calc(100% - 130px);
+                @at-root .cards-digest-type1#{&} {
+                    width: calc(100% - 130px);
+                }
             }
             .card-label {
                 color: $gray-200;
             }
             .card-title {
                 color: $gray-400;
-                @include lineclamp(2);
+                @at-root .cards-digest-type1#{&} {
+                    @include lineclamp(2);
+                }
+                @at-root .cards-digest-type2#{&} {
+                    @include lineclamp(3);
+                }
+            }
+        }
+    }
+    &.cards-authors {
+        display: flex;
+        flex-wrap: wrap;
+        &.ellipsis-block {
+            .card-author {
+                @include media-breakpoint-up(md) {
+                    &:nth-child(15) ~ .card-author {
+                        display: none;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    &:nth-child(6) ~ .card-author {
+                        display: none;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+            }
+        }
+        &.expand-block {
+            padding-bottom: 40px;
+        }
+        > .card-author {
+            margin-top: 40px;
+            @include media-breakpoint-up(md) {
+                width: calc((100% - 120px) / 5);
+                margin-left: 30px;
+                &:nth-child(5n+1) {
+                    margin-left: 0;
+                }
+            }
+            @include media-breakpoint-down(md) {
+                width: calc((100% - 20px) / 2);
+                margin-left: 20px;
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+            .card-image {
+                max-width: 70px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -321,7 +484,7 @@
                 border-radius: 20px;
             }
             .card-title {
-                color: $black;
+                color: $gray-400;
             }
         }
         &:not(.card-author-ing) {

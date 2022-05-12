@@ -1,4 +1,63 @@
 .inner-page {
+    section.section-kv {
+        img {
+            @include media-breakpoint-down(md) {
+                position: relative;
+                left: -2.5%;
+            }
+            @media screen and (max-width: 389px) {
+                left: -3%;
+            }
+            @media screen and (max-width: 359px) {
+                left: -5%;
+            }
+        }
+        h1, .h1 {
+            top: 50%;
+            left: 55%;
+            width: 45%;
+            transform: translateY(-50%);
+            i.icon {
+                color: $blue-200;
+                vertical-align: middle;
+            }
+            @include media-breakpoint-up(md) {
+                @include title-spacing(1);
+            }
+            @include media-breakpoint-down(md) {
+                left: 48%;
+                width: 52%;
+                @include title-spacing(0.5);
+            }
+            @media screen and (max-width: 359px) {
+                left: 45%;
+                width: 55%;
+            }
+        }
+        h1 {
+            @include media-breakpoint-up(md) {
+                font-size: $h2;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $h3;
+            }
+            @media screen and (max-width: 359px) {
+                font-size: $h4;
+            }
+        }
+        .h1 {
+            color: $orange-200;
+            @include media-breakpoint-up(md) {
+                font-size: $h2*3;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $h3*3;
+            }
+            @media screen and (max-width: 359px) {
+                font-size: $h4*3;
+            }
+        }
+    }
     .container-summary {
         @include media-breakpoint-up(md) {
             display: grid;
@@ -7,6 +66,7 @@
             }
             @at-root .author-page#{&} {
                 grid-template-columns: 300px 1fr calc(100% - 1000px);
+                align-items: start;
             }
         }
         .breadcrumb {
@@ -17,6 +77,9 @@
             @at-root .author-page#{&} {
                 grid-column-end: span 3;
             }
+        }
+        .col-master {
+            position: relative;
         }
         .subtitle {
             display: flex;
