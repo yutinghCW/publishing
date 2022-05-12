@@ -114,6 +114,10 @@
             }
             span {
                 color: $gray-300;
+                i {
+                    color: $blue-200;
+                    font-style: normal;
+                }
             }
         }
         .card-label {
@@ -280,20 +284,42 @@
                     }
                 }
             }
+            @at-root .cards-digest-type3#{&} {
+                .card-digest {
+                    &:nth-child(6) ~ .card-digest {
+                        display: none;
+                    }
+                }
+            }
             .more {
                 display: flex;
             }
         }
     }
     .card-digest {
-        @at-root .cards-digest-type1#{&} {
-            margin-bottom: 20px;
+        @at-root {
+            .cards-digest-type1#{&},
+            .cards-digest-type3#{&} {
+                margin-bottom: 20px;
+            }
         }
         @at-root .cards-digest-type2#{&} {
             margin-bottom: 40px;
         }
+        @at-root .cards-digest-type3#{&} {
+            width: 100%;
+            padding: 20px;
+            line-height: 1.25;
+            border: 1px solid $gray-100;
+            border-radius: 0.25rem;
+        }
         @include media-breakpoint-up(md) {
-            margin-right: 20px;
+            @at-root {
+                .cards-digest-type1#{&},
+                .cards-digest-type2#{&} {
+                    margin-right: 20px;
+                }
+            }
             @at-root .cards-digest-type1#{&} {
                 width: calc((100% - 60px) / 4);
                 &:nth-child(4n) {
@@ -322,14 +348,31 @@
                     display: flex;
                 }
             }
+            @at-root .cards-digest-type3#{&} {
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
         .card-image {
             position: relative;
-            border: 5px solid $gray-200;
             overflow: hidden;
+            @at-root {
+                .cards-digest-type1#{&},
+                .cards-digest-type2#{&} {
+                    border: 5px solid $gray-200;
+                }
+            }
             @include media-breakpoint-down(md) {
                 @at-root .cards-digest-type1#{&} {
                     width: 130px;
+                }
+            }
+            @at-root .cards-digest-type3#{&} {
+                @include media-breakpoint-up(md) {
+                    width: 136px;
+                }
+                @include media-breakpoint-down(md) {
+                    width: 80px;
                 }
             }
             &::before {
@@ -358,8 +401,19 @@
                 height: 115%;
             }
         }
+        .card-title {
+            color: $gray-400;
+        }
         .card-body {
             background-color: $white;
+            @at-root .cards-digest-type3#{&} {
+                @include media-breakpoint-up(md) {
+                    width: calc(100% - 135px);
+                }
+                @include media-breakpoint-down(md) {
+                    width: calc(100% - 80px);
+                }
+            }
             @include media-breakpoint-down(md) {
                 @at-root .cards-digest-type1#{&} {
                     width: calc(100% - 130px);
@@ -368,8 +422,11 @@
             .card-label {
                 color: $gray-200;
             }
+            .card-phrase {
+                color: $gray-300;
+                @include lineclamp(3);
+            }
             .card-title {
-                color: $gray-400;
                 @at-root .cards-digest-type1#{&} {
                     @include lineclamp(2);
                 }

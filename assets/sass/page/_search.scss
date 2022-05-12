@@ -1,0 +1,100 @@
+.search-page {
+    main {
+        .container {
+            @include media-breakpoint-up(md) {
+                padding-left: $container-padding-x * 1.5;
+                padding-right: $container-padding-x * 1.5;
+            }
+        }
+    }
+    .result-text {
+        color: $gray-300;
+        h1 {
+            display: inline;
+        }
+    }
+    .section-title {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &::before {
+            @include beforeafter('', block);
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+            background-color: $orange-200;
+            border-radius: 50%;
+        }
+    }
+    article {
+        position: relative;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cards-books, .cards-author {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        > * {
+            @include media-breakpoint-up(md) {
+                width: calc((100% - 80px) / 5);
+                margin-left: 20px;
+                margin-bottom: 40px;
+                &:nth-child(5n+1) {
+                    margin-left: 0;
+                }
+            }
+            @include media-breakpoint-down(md) {
+                margin-bottom: 20px;
+                width: 140px;
+            }
+        }
+    }
+    .swiper-books, .swiper-author {
+        @include media-breakpoint-down(md) {
+            margin-left: -1.25rem;
+            margin-right: -1.25rem;
+            padding-left: 1.25rem;
+            padding-right: 3.4375rem !important;
+        }
+    }
+    .cards-books {
+        &.ellipsis-block {
+            > .card-books {
+                @include media-breakpoint-up(md) {
+                    &:nth-child(10) ~ .card-books {
+                        display: none;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+    .cards-author {
+        > * {
+            margin-bottom: 40px;
+            padding-top: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        &.ellipsis-block {
+            > .card-author {
+                @include media-breakpoint-up(md) {
+                    &:nth-child(10) ~ .card-author {
+                        display: none;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+}
