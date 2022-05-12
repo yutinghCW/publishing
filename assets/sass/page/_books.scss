@@ -7,6 +7,17 @@
             }
         }
     }
+    .btn-top {
+        position: fixed;
+        bottom: 60px;
+        z-index: 3;
+        @include media-breakpoint-up(md) {
+            right: calc(((100% - 1080px) / 2) - 40px);
+        }
+        @include media-breakpoint-down(md) {
+            right: 10px;
+        }
+    }
     article {
         position: relative;
         max-width: 1000px;

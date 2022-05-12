@@ -6152,6 +6152,24 @@ button.collapse {
   }
 }
 
+.books-page .btn-top {
+  position: fixed;
+  bottom: 60px;
+  z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .books-page .btn-top {
+    right: calc(((100% - 1080px) / 2) - 40px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .books-page .btn-top {
+    right: 10px;
+  }
+}
+
 .books-page article {
   position: relative;
   max-width: 1000px;
@@ -6332,6 +6350,24 @@ button.collapse {
   .articles-page main .container {
     padding-left: 1.875rem;
     padding-right: 1.875rem;
+  }
+}
+
+.articles-page .btn-top {
+  position: fixed;
+  bottom: 60px;
+  z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .articles-page .btn-top {
+    right: calc(((100% - 1080px) / 2) - 40px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .articles-page .btn-top {
+    right: 10px;
   }
 }
 
@@ -6900,6 +6936,24 @@ button.collapse {
   }
 }
 
+.search-page .btn-top {
+  position: fixed;
+  bottom: 60px;
+  z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .search-page .btn-top {
+    right: calc(((100% - 1080px) / 2) - 40px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .search-page .btn-top {
+    right: 10px;
+  }
+}
+
 .search-page .result-text {
   color: #ACADAD;
 }
@@ -7070,6 +7124,24 @@ button.collapse {
 @media (max-width: 1023px) {
   .about-page main .social-group i.icon {
     margin-bottom: 5px;
+  }
+}
+
+.about-page .btn-top {
+  position: fixed;
+  bottom: 60px;
+  z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .about-page .btn-top {
+    right: calc(((100% - 1020px) / 2) - 40px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .about-page .btn-top {
+    right: 10px;
   }
 }
 
