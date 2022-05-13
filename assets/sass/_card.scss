@@ -408,7 +408,7 @@
             background-color: $white;
             @at-root .cards-digest-type3#{&} {
                 @include media-breakpoint-up(md) {
-                    width: calc(100% - 135px);
+                    width: calc(100% - 136px);
                 }
                 @include media-breakpoint-down(md) {
                     width: calc(100% - 80px);
