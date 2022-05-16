@@ -66,4 +66,10 @@ main {
   @include media-breakpoint-down(md) {
     overflow: hidden;
   }
+  section {
+    position: relative;
+    .anchor {
+      position: absolute;
+    }
+  }
 }

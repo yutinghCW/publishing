@@ -3471,10 +3471,10 @@ header .container::before {
   height: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #F5F5F5;
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-  transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
@@ -3887,10 +3887,10 @@ nav.menu {
     left: 0;
     width: calc(100% - 40px);
     height: 100%;
-    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-    transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
-    transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+    transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+    transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+    transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     overflow: scroll;
@@ -3923,7 +3923,13 @@ nav.menu > ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav.menu > ul > li {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -3946,10 +3952,6 @@ nav.menu > ul > li > a, nav.menu > ul > li > span {
     padding: 16px 0;
     border: solid transparent;
     border-width: 4px 0;
-  }
-  nav.menu > ul > li > a:hover, nav.menu > ul > li > span:hover {
-    font-weight: 500;
-    border-bottom-color: #4694D1;
   }
 }
 
@@ -4115,6 +4117,11 @@ nav.menu > ul > li > .block .container > div.banner a + a {
 nav.menu > ul > li > .block .container > div.banner a img {
   display: block;
   height: 220px;
+}
+
+nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
+  font-weight: 500;
+  border-bottom-color: #4694D1;
 }
 
 @media (min-width: 1024px) {
@@ -4541,6 +4548,8 @@ nav.menu > ul > li > .block .container > div.banner a img {
 
 .cards .card-body .card-title {
   display: block;
+  -webkit-transition: font-weight 0.3s;
+  transition: font-weight 0.3s;
 }
 
 .cards a:not(.btn) {
@@ -4586,8 +4595,8 @@ nav.menu > ul > li > .block .container > div.banner a img {
      object-fit: contain;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-book .card-image {
@@ -4624,10 +4633,10 @@ nav.menu > ul > li > .block .container > div.banner a img {
   height: calc(100% - 40px);
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-book .card-body .card-title {
@@ -4704,8 +4713,8 @@ nav.menu > ul > li > .block .container > div.banner a img {
           box-shadow: 0 1px 6px rgba(77, 77, 78, 0.1);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: max-width 0.3s cubic-bezier(0, 0, 0.2, 1), max-height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: max-width 0.3s cubic-bezier(0, 0, 0.2, 1), max-height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: max-width 0.5s cubic-bezier(0.35, 0.7, 1, 1), max-height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: max-width 0.5s cubic-bezier(0.35, 0.7, 1, 1), max-height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-books:hover .card-image img {
@@ -4812,10 +4821,12 @@ nav.menu > ul > li > .block .container > div.banner a img {
   left: 50%;
   width: 100.1%;
   height: 100.1%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-reading:hover .card-image img {
@@ -4836,19 +4847,17 @@ nav.menu > ul > li > .block .container > div.banner a img {
 
 .cards .card-reading .card-body .card-label {
   color: #D4D6D7;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cards .card-reading .card-body .card-title {
   color: #4D4D4E;
-}
-
-@media (max-width: 1023px) {
-  .cards .card-reading .card-body .card-title {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .cards.cards-digest {
@@ -4995,10 +5004,12 @@ nav.menu > ul > li > .block .container > div.banner a img {
   left: 50%;
   width: 100.1%;
   height: 100.1%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-digest:hover .card-image img {
@@ -5037,6 +5048,12 @@ nav.menu > ul > li > .block .container > div.banner a img {
   color: #D4D6D7;
 }
 
+.cards-digest-type2.cards .card-digest .card-body .card-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .cards .card-digest .card-body .card-phrase {
   color: #ACADAD;
   display: -webkit-box;
@@ -5050,6 +5067,7 @@ nav.menu > ul > li > .block .container > div.banner a img {
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  min-height: 3rem;
 }
 
 .cards-digest-type2.cards .card-digest .card-body .card-title {
@@ -5057,6 +5075,7 @@ nav.menu > ul > li > .block .container > div.banner a img {
   overflow: hidden;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  min-height: 4.5rem;
 }
 
 .cards.cards-authors {
@@ -5114,7 +5133,8 @@ nav.menu > ul > li > .block .container > div.banner a img {
 }
 
 .cards.cards-authors > .card-author .card-image {
-  max-width: 70px;
+  width: 70px;
+  height: 70px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -5151,15 +5171,15 @@ nav.menu > ul > li > .block .container > div.banner a img {
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
   z-index: 0;
 }
 
 .cards .card-author .card-image::before {
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-  background-color: #D4D6D7;
+  background-color: #F5F5F5;
 }
 
 .cards .card-author .card-image::after {
@@ -5171,6 +5191,8 @@ nav.menu > ul > li > .block .container > div.banner a img {
   position: relative;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
   z-index: 1;
@@ -5195,6 +5217,13 @@ nav.menu > ul > li > .block .container > div.banner a img {
 
 .cards .card-author .card-body .card-title {
   color: #4D4D4E;
+}
+
+@media (min-width: 1280px) {
+  .cards .card-author .card-body .card-title {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 .cards .card-author:not(.card-author-ing) .card-image::after {
@@ -5281,10 +5310,12 @@ nav.menu > ul > li > .block .container > div.banner a img {
   left: 50%;
   width: 100.1%;
   height: 100.1%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1), height 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: width 0.5s cubic-bezier(0.35, 0.7, 1, 1), height 0.5s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .cards .card-video .card-image .icon-play {
@@ -5355,10 +5386,10 @@ nav.menu > ul > li > .block .container > div.banner a img {
   left: 50%;
   max-width: 100%;
   max-height: 100%;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: transform 0.5s cubic-bezier(0.35, 0.7, 1, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0.7, 1, 1);
   -webkit-box-shadow: 2px 2px 6px rgba(15, 15, 15, 0.2);
           box-shadow: 2px 2px 6px rgba(15, 15, 15, 0.2);
   -webkit-transform: translate(-50%, -50%);
@@ -5771,8 +5802,8 @@ button.collapse {
 
 .swiper-opening .swiper-slide {
   opacity: 0.5;
-  -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: opacity 0.3s cubic-bezier(0.35, 0.7, 1, 1);
 }
 
 .swiper-opening .swiper-slide.swiper-slide-active {
@@ -5782,6 +5813,10 @@ button.collapse {
 .swiper-opening .swiper-opening-pagination {
   position: absolute;
   bottom: 20px;
+}
+
+.index-page section .anchor {
+  top: -171px;
 }
 
 .index-page .opening {
@@ -6815,6 +6850,10 @@ button.collapse {
   margin-right: auto;
 }
 
+.authors-page section .anchor {
+  top: -191px;
+}
+
 @media (max-width: 1023px) {
   .authors-page .position-sticky {
     top: 90px;
@@ -7198,5 +7237,13 @@ main {
   main {
     overflow: hidden;
   }
+}
+
+main section {
+  position: relative;
+}
+
+main section .anchor {
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

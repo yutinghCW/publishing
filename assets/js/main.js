@@ -5,12 +5,12 @@ $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function () {
     var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
     if (target.length) {
-      let headerOffset = 91;
-      if ( width >=  1024 ) {
-        headerOffset = 190;
-      } else {
-        headerOffset = 91;
-      }
+      let headerOffset = 0;
+      // if ( width >=  1024 ) {
+      //   headerOffset = 190;
+      // } else {
+      //   headerOffset = 91;
+      // }
       $('html, body').animate({
         scrollTop: (target.offset().top - headerOffset)
       }, 1000);
@@ -41,7 +41,9 @@ $('.open-block').click(function() {
 
 $('.card-video').click(function() {
   let videoUrl = $(this).attr('data-video');
+  let videoTitle = $(this).attr('data-title');
   $('.modal iframe.embed-responsive-item').attr('src', `${videoUrl}?rel=0&autoplay=1`);
+  $('.modal .embed-title').text(videoTitle);
   $('.modal').fadeIn();
   $('.black').addClass('opened modal-black');
 });

@@ -7,7 +7,7 @@ $grid-columns:        12 !default;
 $grid-gutter-width:   2.5rem !default;
 $container-padding-x: $grid-gutter-width * .5 !default;
 
-$timing-function:     cubic-bezier(0, 0, 0.2, 1);
+$timing-function:     cubic-bezier(.35, .7, 1, 1);
 
 // breakpoint
 $grid-breakpoints: (

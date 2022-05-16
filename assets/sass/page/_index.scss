@@ -1,6 +1,11 @@
 @import "../opening";
 
 .index-page {
+  section {
+    .anchor {
+      top: -171px;
+    }
+  }
   .opening {
     overflow: hidden;
   }

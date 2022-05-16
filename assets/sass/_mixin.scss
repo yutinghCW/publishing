@@ -19,6 +19,12 @@
   clear: both;
 }
 
+@mixin ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @mixin lineclamp($line) {
   display: -webkit-box;
   overflow: hidden;
