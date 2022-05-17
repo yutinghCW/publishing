@@ -2,3 +2,7 @@
 *.css.map
 *.sass.map
 *.scss.map
+
+.nuxt/
+.vscode/
+node_modules/
