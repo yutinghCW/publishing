@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'publishing',
+    title: '我讀網 - 天下雜誌出版',
     htmlAttrs: {
       lang: 'zh-tw'
     },
@@ -12,16 +12,20 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'normalize.css/normalize.css',
+    "swiper/swiper-bundle.css",
+    "~/assets/sass/style"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "~/plugins/swiper.js", ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
