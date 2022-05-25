@@ -1,0 +1,14 @@
+.announcement {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: $white;
+    font-size: $h5;
+    @include title-spacing(2);
+    text-align: center;
+    background-color: $blue-200;
+    &:hover {
+        background-color: lighten($blue-200, 5%);
+    }
+}

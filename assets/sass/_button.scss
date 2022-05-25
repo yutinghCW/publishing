@@ -49,7 +49,9 @@
             background-color: $gray-100;
             border-color: $gray-100;
             &:hover {
-                color: $black;
+                color: $white;
+                background-color: $blue-200;
+                border-color: $blue-200;
             }
         }
     }
@@ -64,10 +66,16 @@
             text-underline-position: under;
             text-decoration-thickness: from-font;
         }
+        &.btn-white {
+            color: $white;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
         &.btn-black {
             color: $gray-400;
             &:hover {
-                color: $black;
+                color: $blue-300;
             }
         }
         &.btn-blue {

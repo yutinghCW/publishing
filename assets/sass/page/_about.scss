@@ -3,6 +3,12 @@
         .container {
             max-width: 940px;
         }
+        .title-decoration.serif {
+            font-size: $h3;
+            &::after {
+                margin-top: 20px;
+            }
+        }
         .social-group {
             @include list(0, 0, none);
             display: flex;
@@ -15,11 +21,12 @@
             @include media-breakpoint-down(md) {
                 gap: 30px;
             }
-            li {
+            li > a {
                 display: flex;
                 align-items: center;
                 @include media-breakpoint-down(md) {
                     flex-direction: column;
+                    min-width: 60px;
                 }
             }
             i.icon {

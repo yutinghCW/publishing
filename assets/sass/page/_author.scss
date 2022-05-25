@@ -1,4 +1,12 @@
 .author-page {
+    section {
+        .anchor {
+            top: -181px;
+            @at-root .scroll #{&} {
+                top: -116px;
+            }
+        }
+    }
     .container-summary {
         @import "../social";
     }

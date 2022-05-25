@@ -25,10 +25,16 @@
     transform: translate3d(0,0,0);
     z-index: 10;
     .swiper-pagination-bullet {
+      width: 5px;
+      height: 5px;
       margin-left: 8px;
       margin-right: 8px;
       background-color: $gray-300;
       opacity: 1;
+      @include media-breakpoint-up(md) {
+        width: 8px;
+        height: 8px;
+      }    
       &.swiper-pagination-bullet-active {
         background-color: $gray-400;
       }
@@ -46,7 +52,7 @@
     .swiper-pagination-bullet {
       background-color: $gray-200;
       &.swiper-pagination-bullet-active {
-        background-color: $gray-300;
+        background-color: $gray-400;
       }
     }
   }
@@ -58,6 +64,12 @@
   color: $gray-200;
   transform: translateY(-50%);
   cursor: pointer;
+  @include media-breakpoint-up(md) {
+    transition: color 0.3s, background 0.3s, border-color 0.3s;
+  }
+  &:hover {
+    color: $blue-200;
+  }
   &.swiper-button-disabled {
     color: $gray-100;
     cursor: not-allowed;

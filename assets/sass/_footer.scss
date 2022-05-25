@@ -25,15 +25,18 @@ footer {
                 justify-content: space-between;
             }
             li {
-                column-gap: 10px;
                 @include media-breakpoint-down(md) {
                     flex-direction: column;
                     + li {
                         margin-top: 0;
                     }
                 }
+                a.btn.btn-text {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+                }
                 i.icon {
-                    display: block;
                     font-size: $h2 * 2;
                     @include media-breakpoint-up(md) {
                         font-size: $h2;

@@ -4,6 +4,9 @@
   section {
     .anchor {
       top: -171px;
+      @at-root .scroll#{&} {
+        top: -106px;
+      }
     }
   }
   .opening {
@@ -21,7 +24,10 @@
         column-gap: 20px;
       }
       i.icon {
-        font-size: 2.5rem;
+        font-size: 1.875rem;
+        @include media-breakpoint-up(md) {
+          font-size: 2.5rem;
+        }
       }
       p {
         color: $gray-400;

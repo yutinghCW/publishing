@@ -48,7 +48,7 @@
                 height: 100.1%;
                 object-fit: contain;
                 transform: translate(-50%, -50%);
-                transition: width 0.5s $timing-function, height 0.5s $timing-function;
+                transition: width 0.2s $timing-function, height 0.2s $timing-function;
             }
         }
     }
@@ -81,7 +81,7 @@
                 width: calc(100% - 20px);
                 height: calc(100% - 40px);
                 object-fit: contain;
-                transition: transform 0.5s $timing-function;
+                transition: transform 0.2s $timing-function;
                 // box-shadow: 2px 2px 6px rgba($black, 0.2);
             }
         }
@@ -90,15 +90,13 @@
                 color: $black;
             }
             .card-author {
-                color: $gray-200;
+                color: $gray-300;
+                @include lineclamp(2);
             }
         }
         &:hover {
             .card-image img {
                 transform: translateY(-10px);
-            }
-            .card-title {
-                font-weight: 300;
             }
         }
     }
@@ -149,7 +147,7 @@
                 max-height: 100%;
                 box-shadow: 0 1px 6px rgba($gray-400, 0.1);
                 transform: translate(-50%, -50%);
-                transition: max-width 0.5s $timing-function, max-height 0.5s $timing-function;
+                transition: max-width 0.2s $timing-function, max-height 0.2s $timing-function;
             }
         }
         &:hover {
@@ -235,7 +233,7 @@
                 height: 100.1%;
                 object-fit: cover;
                 transform: translate(-50%, -50%);
-                transition: width 0.5s $timing-function, height 0.5s $timing-function;
+                transition: width 0.2s $timing-function, height 0.2s $timing-function;
             }
         }
         &:hover {
@@ -251,7 +249,7 @@
                 width: calc(100% - 130px);
             }
             .card-label {
-                color: $gray-200;
+                color: $gray-300;
                 @include ellipsis;
             }
             .card-title {
@@ -268,6 +266,20 @@
                 .card-digest {
                     &:nth-child(4) ~ .card-digest {
                         display: none;
+                    }
+                }
+            }
+            @at-root .cards-digest-type4#{&} {
+                .card-digest {
+                    @include media-breakpoint-up(md) {
+                        &:nth-child(4) ~ .card-digest {
+                            display: none;
+                        }
+                    }
+                    @include media-breakpoint-down(md) {
+                        &:nth-child(3) ~ .card-digest {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -300,12 +312,14 @@
     .card-digest {
         @at-root {
             .cards-digest-type1#{&},
-            .cards-digest-type3#{&} {
+            .cards-digest-type3#{&},
+            .cards-digest-type4#{&} {
                 margin-bottom: 20px;
+                width: 100%;
             }
         }
         @at-root .cards-digest-type2#{&} {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         @at-root .cards-digest-type3#{&} {
             width: 100%;
@@ -317,14 +331,18 @@
         @include media-breakpoint-up(md) {
             @at-root {
                 .cards-digest-type1#{&},
-                .cards-digest-type2#{&} {
+                .cards-digest-type2#{&},
+                .cards-digest-type4#{&} {
                     margin-right: 20px;
                 }
             }
-            @at-root .cards-digest-type1#{&} {
-                width: calc((100% - 60px) / 4);
-                &:nth-child(4n) {
-                    margin-right: 0;
+            @at-root {
+                .cards-digest-type1#{&},
+                .cards-digest-type4#{&} {
+                    width: calc((100% - 60px) / 4);
+                    &:nth-child(4n) {
+                        margin-right: 0;
+                    }
                 }
             }
             @at-root .cards-digest-type2#{&} {
@@ -345,8 +363,11 @@
         }
         a {
             @include media-breakpoint-down(md) {
-                @at-root .cards-digest-type1#{&} {
-                    display: flex;
+                @at-root {
+                    .cards-digest-type1#{&},
+                    .cards-digest-type4#{&} {
+                        display: flex;
+                    }
                 }
             }
             @at-root .cards-digest-type3#{&} {
@@ -359,13 +380,11 @@
             overflow: hidden;
             @at-root {
                 .cards-digest-type1#{&},
-                .cards-digest-type2#{&} {
+                .cards-digest-type4#{&} {
                     border: 5px solid $gray-200;
-                }
-            }
-            @include media-breakpoint-down(md) {
-                @at-root .cards-digest-type1#{&} {
-                    width: 130px;
+                    @include media-breakpoint-down(md) {
+                        width: 130px;
+                    }
                 }
             }
             @at-root .cards-digest-type3#{&} {
@@ -393,7 +412,7 @@
                 height: 100.1%;
                 object-fit: cover;
                 transform: translate(-50%, -50%);
-                transition: width 0.5s $timing-function, height 0.5s $timing-function;
+                transition: width 0.2s $timing-function, height 0.2s $timing-function;
             }
         }
         &:hover {
@@ -417,8 +436,11 @@
                 }
             }
             @include media-breakpoint-down(md) {
-                @at-root .cards-digest-type1#{&} {
-                    width: calc(100% - 130px);
+                @at-root {
+                    .cards-digest-type1#{&},
+                    .cards-digest-type4#{&} {
+                        width: calc(100% - 130px);
+                    }
                 }
             }
             .card-label {
@@ -432,9 +454,12 @@
                 @include lineclamp(3);
             }
             .card-title {
-                @at-root .cards-digest-type1#{&} {
-                    @include lineclamp(2);
-                    min-height: 1.5 * 2 * 1rem;
+                @at-root {
+                    .cards-digest-type1#{&},
+                    .cards-digest-type4#{&} {
+                        @include lineclamp(2);
+                        min-height: 1.5 * 2 * 1rem;
+                    }
                 }
                 @at-root .cards-digest-type2#{&} {
                     @include lineclamp(3);
@@ -508,7 +533,7 @@
             &::after {
                 @include beforeafter('', block);
                 border-radius: 50%;
-                transition: width 0.5s $timing-function, height 0.5s $timing-function;
+                transition: width 0.2s $timing-function, height 0.2s $timing-function;
                 z-index: 0;
             }
             &::before {
@@ -638,7 +663,7 @@
                 height: 100.1%;
                 object-fit: cover;
                 transform: translate(-50%, -50%);
-                transition: width 0.5s $timing-function, height 0.5s $timing-function;
+                transition: width 0.2s $timing-function, height 0.2s $timing-function;
             }
             .icon-play {
                 position: absolute;
@@ -704,7 +729,7 @@
                 left: 50%;
                 max-width: 100%;
                 max-height: 100%;
-                transition: transform 0.5s $timing-function;
+                transition: transform 0.2s $timing-function;
                 box-shadow: 2px 2px 6px rgba($black, 0.2);
                 transform: translate(-50%, -50%);
             }
@@ -764,18 +789,25 @@
         }
         .card-item {
             display: grid;
-            grid-template-columns: 135px auto;
+            align-items: center;
+            grid-template-columns: 105px auto;
             padding-bottom: 30px;
             color: $gray-400;
+            @include media-breakpoint-up(md) {
+                grid-template-columns: 135px auto;
+            }
             + .card-item {
                 padding-top: 40px;
                 border-top: 1px solid $gray-200;
             }
         }
         .card-img {
-            width: 110px;
-            grid-row-start: 0;
-            grid-row-end: span 2;
+            width: 90px;
+            @include media-breakpoint-up(md) {
+                width: 110px;
+                grid-row-start: 0;
+                grid-row-end: span 2;
+            }
             img {
                 width: 100%;
                 border-radius: 50%;
@@ -787,13 +819,13 @@
                 display: flex;
                 align-items: center;
             }
-            .author-name {
-                @include media-breakpoint-up(md) {
-                    margin-right: 25px;
-                }
-                @include media-breakpoint-down(md) {
-                    margin-bottom: 15px;
-                }
+        }
+        .btn {
+            @include media-breakpoint-up(md) {
+                margin-left: 25px;
+            }
+            @include media-breakpoint-down(md) {
+                margin-top: 15px;
             }
         }
         .card-txt {

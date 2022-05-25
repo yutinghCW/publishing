@@ -51,12 +51,9 @@
     }
     h1 {
         color: $black;
+        margin-top: 0;
         margin-bottom: 15px;
-        @include media-breakpoint-up(md) {
-            margin-top: 10px;
-        }
         @include media-breakpoint-down(md) {
-            margin-top: 5px;
             margin-left: -$container-padding-x * 0.5;
             margin-right: -$container-padding-x * 0.5;
             font-size: $h2;

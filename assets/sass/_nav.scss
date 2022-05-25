@@ -4,14 +4,25 @@ nav.menu {
   border-bottom: 1px solid $gray-200;
   @include media-breakpoint-up(md) {
     top: 106px; // 40+50+10+1
+    left: 0;
     width: 100%;
     z-index: 2;
+    .scroll & {
+      position: static;
+      top: auto;
+      left: auto;
+      width: auto;
+      margin-top: -15px;
+      margin-bottom: -15px;
+      margin-left: auto;
+      border-bottom: 0;
+    }
   }
   @include media-breakpoint-down(md) {
-    top: 0%;
+    top: 71px;
     left: 0;
-    width: calc(100% - 40px);
-    height: 100%;
+    width: 100%;
+    height: calc(100% - 71px);
     transition: transform 0.5s $timing-function;
     transform: translateX(-100%);
     overflow: scroll;
@@ -24,11 +35,11 @@ nav.menu {
     @include list(0, 0, none);
   }
   > ul {
-    position: relative;
     @include media-breakpoint-up(md) {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 20px;
     }
     > li {
       @include media-breakpoint-up(md) {
@@ -87,6 +98,7 @@ nav.menu {
           top: 100%;
           left: 0;
           width: 100%;
+          box-shadow: 0 2px 4px rgba($black, .1);
         }
         @include media-breakpoint-down(md) {
           padding-left: 10px;
@@ -104,6 +116,7 @@ nav.menu {
             white-space: nowrap;
             &.anchor {
               .btn {
+                font-weight: 700;
                 @include media-breakpoint-down(md) {
                   width: 100%;
                   line-height: 2.125;
@@ -136,6 +149,7 @@ nav.menu {
                 width: 100%;
                 padding-top: 12px;
                 padding-bottom: 7px;
+                font-weight: 600;
                 text-align: center;
                 border-top: 1px solid $gray-200;
               }

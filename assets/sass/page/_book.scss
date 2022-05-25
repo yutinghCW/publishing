@@ -1,5 +1,21 @@
+.book-page {
+    section {
+        .anchor {
+            top: -171px;
+            @at-root .scroll #{&} {
+                top: -106px;
+            }
+        }
+    }
+}
+
 .edit-block {
     padding-top: 20px;
+    #detail & {
+        a.btn {
+            font-weight: 500;
+        }
+    }
     .content,
     .table-of-content {
         p {
