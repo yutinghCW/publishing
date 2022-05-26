@@ -10,7 +10,9 @@
 }
 
 .edit-block {
-    padding-top: 20px;
+    @include media-breakpoint-up(md) {
+        padding-top: 20px;
+    }
     #detail & {
         a.btn {
             font-weight: 500;

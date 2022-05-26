@@ -41,6 +41,9 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      @include media-breakpoint-down(md) {
+        height: 10px;
+      }
     }
     .reading-top {
       top: 0;

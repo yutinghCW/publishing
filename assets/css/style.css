@@ -4194,9 +4194,39 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   padding-bottom: 10px;
   color: #ffffff;
   font-size: 0.875rem;
-  letter-spacing: 0.125rem;
-  text-align: center;
   background-color: #4694D1;
+}
+
+@media (min-width: 1024px) {
+  .announcement {
+    letter-spacing: 0.125rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .announcement .container {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  .announcement .container {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .announcement .container > * {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .announcement:hover {
@@ -6128,6 +6158,13 @@ button.collapse {
           transform: translateX(-50%);
 }
 
+@media (max-width: 1023px) {
+  .index-page .reading .reading-top,
+  .index-page .reading .reading-bottom {
+    height: 10px;
+  }
+}
+
 .index-page .reading .reading-top {
   top: 0;
 }
@@ -6553,8 +6590,10 @@ button.collapse {
   top: -106px;
 }
 
-.edit-block {
-  padding-top: 20px;
+@media (min-width: 1024px) {
+  .edit-block {
+    padding-top: 20px;
+  }
 }
 
 #detail .edit-block a.btn {
