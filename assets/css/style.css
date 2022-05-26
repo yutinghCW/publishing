@@ -3635,12 +3635,6 @@ footer ul li + li {
 }
 
 @media (max-width: 1023px) {
-  footer ul.social-group li {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   footer ul.social-group li + li {
     margin-top: 0;
   }
@@ -3655,6 +3649,16 @@ footer ul.social-group li a.btn.btn-text {
           align-items: center;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+}
+
+@media (max-width: 1023px) {
+  footer ul.social-group li a.btn.btn-text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 65px;
+  }
 }
 
 footer ul.social-group li i.icon {
@@ -4373,6 +4377,18 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   letter-spacing: 0.0625em;
 }
 
+.button-group .btn-contained {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (min-width: 1024px) {
   .button-group .btn-contained {
     padding-top: 25px;
@@ -4384,6 +4400,13 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   .button-group .btn-contained {
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 413px) {
+  .button-group .btn-contained {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
@@ -5788,11 +5811,13 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   outline: 0;
   z-index: 1060;
 }
@@ -5835,7 +5860,7 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   overflow: hidden;
 }
 
-.modal.modal-video .modal-dialog {
+.modal.modal-video {
   max-width: 640px;
 }
 
@@ -5856,6 +5881,60 @@ nav.menu > ul > li:hover > a, nav.menu > ul > li:hover > span {
   display: block;
   padding: 2px 0;
   cursor: pointer;
+}
+
+.modal.modal-book {
+  max-width: 840px;
+}
+
+.modal.modal-book .modal-dialog .modal-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal.modal-book .modal-dialog .modal-head .icon-close {
+  display: block;
+  padding: 2px 0;
+  cursor: pointer;
+}
+
+.modal.modal-book .modal-dialog .modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.modal.modal-book .modal-dialog .card-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  background-color: #F5F5F5;
+}
+
+@media (min-width: 1024px) {
+  .modal.modal-book .modal-dialog .card-img {
+    width: 800px;
+    padding: 40px;
+  }
+}
+
+.modal.modal-book .modal-dialog .card-img img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 @media (min-width: 1024px) {
@@ -6271,7 +6350,7 @@ button.collapse {
 }
 
 .inner-page .container-detail {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 @media (min-width: 1024px) {
@@ -6280,6 +6359,7 @@ button.collapse {
     display: grid;
     -ms-grid-columns: 1030px 1fr;
         grid-template-columns: 1030px 1fr;
+    padding-top: 60px;
   }
 }
 
@@ -6779,15 +6859,19 @@ button.collapse {
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='35' viewBox='0 0 25 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 5H16.5951C17.4969 5.00403 18.3606 5.36407 18.9983 6.00174C19.6359 6.63942 19.996 7.50312 20 8.40491V13.1902C19.9959 14.0906 19.6354 14.9527 18.9973 15.5879C18.3592 16.2231 17.4955 16.5797 16.5951 16.5797H5C5.71585 12.753 5.71585 8.82673 5 5ZM17.2899 27.1013C17.927 26.1479 18.267 25.027 18.267 23.8804C18.269 23.1185 18.1204 22.3636 17.8298 21.6593C17.5391 20.955 17.1122 20.3151 16.5734 19.7764C16.0347 19.2376 15.3947 18.8106 14.6904 18.52C13.9861 18.2294 13.2313 18.0808 12.4694 18.0828C11.3228 18.0828 10.2019 18.4228 9.24848 19.0599C8.29508 19.6969 7.55199 20.6024 7.11319 21.6618C6.67439 22.7211 6.55958 23.8868 6.78328 25.0114C7.00698 26.136 7.55914 27.169 8.36994 27.9798C9.18075 28.7906 10.2138 29.3428 11.3384 29.5665C12.463 29.7902 13.6287 29.6754 14.6881 29.2366C15.7474 28.7978 16.6529 28.0547 17.2899 27.1013Z' fill='%23D4D6D7'/%3E%3C/svg%3E%0A");
 }
 
-.article-page .content h2, .article-page .content h3 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
 .article-page .content p {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.article-page .content h2, .article-page .content h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.article-page .content h2 + *, .article-page .content h3 + * {
+  margin-top: 10px;
 }
 
 .article-page .content ul, .article-page .content ol {

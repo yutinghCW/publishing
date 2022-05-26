@@ -136,10 +136,11 @@
         }
     }
     .container-detail {
-        padding-top: 60px;
+        padding-top: 30px;
         @include media-breakpoint-up(md) {
             display: grid;
             grid-template-columns: 1030px 1fr;
+            padding-top: 60px;
         }
         aside {
             @include media-breakpoint-up(md) {

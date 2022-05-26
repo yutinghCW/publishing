@@ -129,6 +129,9 @@
     flex-wrap: wrap;
     letter-spacing: 0.0625em;
     .btn-contained {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         @include media-breakpoint-up(md) {
             padding-top: 25px;
             padding-bottom: 25px;
@@ -136,6 +139,10 @@
         @include media-breakpoint-down(md) {
             padding-top: 12px;
             padding-bottom: 12px;
+        }
+        @include media-breakpoint-down(xs) {
+            padding-left: 8px;
+            padding-right: 8px;
         }
     }
     > * {
