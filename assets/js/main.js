@@ -201,15 +201,15 @@ $('.books-page .more').click(function() {
     for (let i = 0; i < 15; i++) {
       $(this).parent().children('.card-books').eq(i+(15*booksClickCal)).show();
     }
-  } else if ( width < 768 && itemLength > 12 ) {
-    let clickTotal = Math.ceil(itemLength / 12) - 2;
+  } else if ( width < 768 && itemLength > 6 ) {
+    let clickTotal = Math.ceil(itemLength / 6) - 2;
     if ( booksClickCal < clickTotal ) {
       booksClickCal ++;
     } else {
       $(this).parent().removeClass('ellipsis-block');
     }
-    for (let i = 0; i < 12; i++) {
-      $(this).parent().children('.card-books').eq(i+(12*booksClickCal)).show();
+    for (let i = 0; i < 6; i++) {
+      $(this).parent().children('.card-books').eq(i+(6*booksClickCal)).show();
     }
   }
 });
@@ -254,16 +254,16 @@ $('.articles-page .more').click(function() {
     for (let i = 0; i < 15; i++) {
       $(this).parent().children('.card-digest').eq(i+(15*articlesClickCal)).show();
     }
-  } else if ( width < 768 && itemLength > 12 ) {
-    let clickTotal = Math.ceil(itemLength / 12) - 2;
+  } else if ( width < 768 && itemLength > 6 ) {
+    let clickTotal = Math.ceil(itemLength / 6) - 2;
     if ( articlesClickCal < clickTotal ) {
       articlesClickCal ++;
     } else {
       $(this).parent().addClass('expand-block');
       $(this).parent().removeClass('ellipsis-block');
     }
-    for (let i = 0; i < 12; i++) {
-      $(this).parent().children('.card-digest').eq(i+(12*articlesClickCal)).show();
+    for (let i = 0; i < 6; i++) {
+      $(this).parent().children('.card-digest').eq(i+(6*articlesClickCal)).show();
     }
   }
 });
