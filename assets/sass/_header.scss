@@ -7,15 +7,18 @@ header {
   @include media-breakpoint-up(md) {
     background-color: $white;
   }
-  .container {
+  > .container {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $gray-100;
     background-color: $white;
     @include media-breakpoint-up(md) {
       align-items: flex-end;
-      column-gap: 20px;
+      padding-top: 40px;
+      padding-bottom: 15px;
     }
     .hamburger {
       z-index: 1;
@@ -33,7 +36,7 @@ header {
       position: absolute;
       top: 0;
       left: 0;
-      width: calc(100% - 40px);
+      width: 100%;
       height: 100%;
       background-color: $white;
       border-bottom: 1px solid $gray-100;
@@ -49,6 +52,7 @@ header {
     }
   }
   .collapse-nav {
+    margin-left: auto;
     @include media-breakpoint-up(md) {
       display: flex !important;
       align-items: center;
@@ -84,6 +88,17 @@ header {
           color: $gray-400;
         }
       }
+    }
+  }
+  &.scroll {
+    > .container {
+      padding-top: 15px;
+    }
+    .collapse-nav {
+      margin-left: 0;
+    }
+    ul.keywords {
+      display: none;
     }
   }
 }

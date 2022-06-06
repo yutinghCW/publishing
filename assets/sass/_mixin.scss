@@ -31,3 +31,7 @@
   -webkit-line-clamp: $line;
   -webkit-box-orient: vertical;
 }
+
+@mixin title-spacing($unit) {
+  letter-spacing: 0.125rem * 0.5 * $unit;
+}

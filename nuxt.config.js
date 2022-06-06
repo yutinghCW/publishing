@@ -20,7 +20,7 @@ export default {
   css: [
     'normalize.css/normalize.css',
     "swiper/swiper-bundle.css",
-    "~/assets/sass/style"
+    "~/assets/sass/style",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,6 +33,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/device',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,5 +42,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // ssr: true,
 }

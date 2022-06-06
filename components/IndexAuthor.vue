@@ -13,7 +13,6 @@
           </span>
         </NuxtLink>
       </swiper-slide>
-      <div class="swiper-reading-pagination d-md-none mt-10" slot="pagination"></div>
     </swiper>
   </div>
 </template>

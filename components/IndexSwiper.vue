@@ -4,7 +4,7 @@
       <swiper class="swiper swiper-opening" :options="swiperOption">
         <swiper-slide v-for="(order, idx) in 4" :key="idx">
           <NuxtLink to="/">
-            <img :src="`images/common/banner-${order}.jpg`" width="100%" alt="">
+            <img :src="`https://yutinghcw.github.io/publishing/assets/images/index/banner-${order}.jpg`" width="100%" alt="">
           </NuxtLink>
         </swiper-slide>
         <div class="swiper-opening-pagination" slot="pagination"></div>

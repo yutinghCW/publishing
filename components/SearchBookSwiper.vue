@@ -1,31 +1,40 @@
 <template>
-  <div class="position-relative px-md-40 px-0">
-    <swiper
-      class="swiper swiper-latest cards cards-book cards-book-type-1"
-      :options="swiperOption"
+  <swiper
+    class="swiper swiper-books cards cards-book cards-book-type-2"
+    :options="swiperOption"
+  >
+    <swiper-slide
+      class="card-book"
+      :class="{
+        'hot': list.selling_status === 2, 
+        'soldout': list.selling_status === 3, 
+        'new': list.selling_status === 4
+      }"
+      v-for="(list, index) in lists"
+      :key="index"
     >
-      <swiper-slide class="card-book" v-for="(list, index) in lists" :key="index">
-        <NuxtLink :to="`/book/${list.id}`">
+      <NuxtLink :to="`/book/${list.id}`">
+        <span class="card-head">
+          <span class="card-label" v-if="list.selling_status == 2">熱銷</span>
+          <span class="card-label" v-else-if="list.selling_status == 3">絕版</span>
+          <span class="card-label" v-else-if="list.selling_status == 4">新發行</span>
           <span class="card-image">
-            <img :src="list.covers[0].photo_url" :alt="list.title">
+            <img :src="list.covers[0].photo_url" :alt="`《${list.title}》書封`">
           </span>
-          <span class="card-body pt-10">
-            <span class="card-title fs-4 mb-5">{{ list.subtitle }}</span>
-            <span class="card-author fs-5">
-              <span v-for="(author, index) in list.authors" :key="`${author}-${index}`">{{ author.name }}</span>
-            </span>
+        </span>
+        <span class="card-body">
+          <h4 class="serif fw-bold mt-10 mb-5" v-if="list.subtitle">{{list.subtitle}}</h4>
+          <h4 class="serif fw-bold mt-10 mb-5" v-else>{{list.title}}</h4>
+          <span class="fs-6 my-5"><i class="time">{{list.publish_date}}</i> 出版</span>
+          <span class="fs-5">
+            <template v-for="(author, idx) in list.authors">
+              <template v-if="idx === 0">{{ author.name }}</template><template v-else>、{{ author.name }}</template>
+            </template>
           </span>
-        </NuxtLink>
-      </swiper-slide>
-    </swiper>
-    <div class="swiper-latest-pagination d-md-block d-none"></div>
-    <div class="swiper-latest-button-prev d-md-block d-none">
-      <i class="icon icon-arrow-left"></i>
-    </div>
-    <div class="swiper-latest-button-next d-md-block d-none">
-      <i class="icon icon-arrow-right"></i>
-    </div>
-  </div>
+        </span>
+      </NuxtLink>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
@@ -34,7 +43,7 @@
       return {
         lists: [
           {
-            "id": 2,
+            "id": 1,
             "title": "零規則",
             "subtitle": "高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密",
             "covers": [
@@ -51,16 +60,13 @@
             ],
             "authors": [
               {
-                "id": 2,
-                "name": "里德‧海斯汀",
-                "sort": 1
-              },
-              {
                 "id": 1,
-                "name": "艾琳‧梅爾",
-                "sort": 2
+                "name": "里德‧海斯汀",
+                "status": 1,
+                "sort": 1
               }
             ],
+            "selling_status": 2,
             "publish_date": "2022-02-22"
           },
           {
@@ -106,6 +112,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -131,6 +138,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -166,6 +174,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -191,6 +200,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -216,6 +226,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 3,
             "publish_date": "2022-02-22"
           },
           {
@@ -241,6 +252,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -266,6 +278,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -291,6 +304,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -326,6 +340,59 @@
                 "sort": 1
               }
             ],
+            "selling_status": 4,
+            "publish_date": "2022-02-22"
+          },
+          {
+            "id": 1,
+            "title": "男孩、鼴鼠、狐狸與馬",
+            "subtitle": "",
+            "covers": [
+              {
+                "id": 2,
+                "photo_url": "https://www.books.com.tw/img/001/091/48/0010914874.jpg",
+                "sort": 1
+              },
+              {
+                "id": 1,
+                "photo_url": "https://www.books.com.tw/img/001/091/48/0010914874_bc_01.jpg",
+                "sort": 2
+              }
+            ],
+            "authors": [
+              {
+                "id": 1,
+                "name": "查理．麥克斯",
+                "sort": 1
+              }
+            ],
+            "selling_status": 1,
+            "publish_date": "2022-02-22"
+          },
+          {
+            "id": 1,
+            "title": "我的孩子要在這裡讀書",
+            "subtitle": "黃建興建築師經典校園走讀",
+            "covers": [
+              {
+                "id": 2,
+                "photo_url": "https://www.books.com.tw/img/001/091/22/0010912286.jpg",
+                "sort": 1
+              },
+              {
+                "id": 1,
+                "photo_url": "https://www.books.com.tw/img/001/091/22/0010912286_bc_01.jpg",
+                "sort": 2
+              }
+            ],
+            "authors": [
+              {
+                "id": 1,
+                "name": "游苔",
+                "sort": 1
+              }
+            ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
         ],

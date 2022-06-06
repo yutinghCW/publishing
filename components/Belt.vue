@@ -1,6 +1,6 @@
 <template>
   <section class="slogan">
-    <div class="container py-20">
+    <div class="container py-md-20 py-10">
       <i class="icon icon-glass"></i>
       <p class="my-0 d-md-block d-none">
         一刻靜讀  趨勢‧知識‧思考‧態度 ——【天下雜誌出版電子報】 

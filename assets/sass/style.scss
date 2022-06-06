@@ -11,6 +11,12 @@ body {
 
 @import "font";
 
+.text-decoration {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: from-font;
+}
+
 @import "space";
 @import "container";
 @import "grid";
@@ -21,9 +27,28 @@ body {
 @import "header";
 @import "search";
 @import "nav";
+@import "footer";
 @import "swiper";
+@import "slogan";
+@import "announcement";
 @import "title";
 @import "card";
 @import "reading";
 
 @import "page/index";
+@import "page/inner";
+@import "page/search";
+
+main {
+  position: relative;
+  z-index: 0;
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+  }
+  section {
+    position: relative;
+    .anchor {
+      position: absolute;
+    }
+  }
+}

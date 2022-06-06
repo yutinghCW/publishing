@@ -9,7 +9,7 @@
                 <img :src="item.photo_url" :alt="item.title">
               </span>
               <span class="card-body mt-md-10 py-md-15 py-10 px-15">
-                <span class="card-label h5 mt-0 mb-5">快樂實現自主富有</span>
+                <span class="card-label fs-5 mb-5">快樂實現自主富有</span>
                 <span class="card-title h4 serif fw-bold my-0">{{ item.title }}</span>
               </span>
             </NuxtLink>

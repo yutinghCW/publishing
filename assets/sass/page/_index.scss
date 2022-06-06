@@ -1,19 +1,32 @@
-.slogan {
-  background-color: $gray-100;
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 15px;
-    letter-spacing: 0.125rem;
-    @include media-breakpoint-up(md) {
-      column-gap: 20px;
+.swiper-opening {
+  overflow: visible;
+  a {
+    display: block;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+  .swiper-slide {
+    opacity: 0.5;
+    transition: opacity 0.3s $timing-function;
+    &.swiper-slide-active {
+      opacity: 1;
     }
-    i.icon {
-      font-size: 2.5rem;
-    }
-    p {
-      color: $gray-400;
+  }
+  .swiper-opening-pagination {
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+.index-page {
+  section {
+    .anchor {
+      top: -171px;
+      @at-root .scroll#{&} {
+        top: -106px;
+      }
     }
   }
 }

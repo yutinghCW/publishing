@@ -12,7 +12,7 @@
         <div class="block">
           <div class="container py-30">
             <div class="anchor">
-              <NuxtLink to="/book/id" class="btn btn-outlined btn-primary">最新出版</NuxtLink>
+              <NuxtLink :to="{path: '/', hash: '#latest'}" class="btn btn-outlined btn-primary">最新出版</NuxtLink>
             </div>
             <div class="recommend">
               <ul>
@@ -26,7 +26,7 @@
             </div>
             <div class="banner">
               <a href="#!">
-                <img src="images/common/ad-1.jpg" alt="banner">
+                <img src="https://yutinghcw.github.io/publishing/assets/images/index/ad-1.jpg" alt="banner">
               </a>
             </div>
           </div>
@@ -55,7 +55,7 @@
             </div>
             <div class="banner">
               <a href="#!">
-                <img src="/images/common/ad-2.jpg" alt="banner">
+                <img src="https://yutinghcw.github.io/publishing/assets/images/index/ad-2.jpg" alt="banner">
               </a>
             </div>
           </div>
@@ -69,7 +69,7 @@
         <div class="block">
           <div class="container py-30">
             <div class="anchor">
-              <NuxtLink to="/article/id" class="btn btn-outlined btn-primary">精選閱讀</NuxtLink>
+              <NuxtLink :to="{path: '/', hash: '#reading'}" class="btn btn-outlined btn-primary">精選閱讀</NuxtLink>
             </div>
             <div class="recommend">
               <ul>
@@ -83,7 +83,7 @@
             </div>
             <div class="banner">
               <a href="#!">
-                <img src="images/common/ad-3.jpg" alt="banner">
+                <img src="https://yutinghcw.github.io/publishing/assets/images/index/ad-3.jpg" alt="banner">
               </a>
             </div>
           </div>
@@ -106,10 +106,10 @@
             </div>
             <div class="banner">
               <a href="#!">
-                <img src="images/common/ad-4.jpg" alt="banner">
+                <img src="https://yutinghcw.github.io/publishing/assets/images/index/ad-4.jpg" alt="banner">
               </a>
               <a href="#!">
-                <img src="images/common/ad-5.jpg" alt="banner">
+                <img src="https://yutinghcw.github.io/publishing/assets/images/index/ad-5.jpg" alt="banner">
               </a>
             </div>
           </div>

@@ -1,30 +1,26 @@
 <template>
-  <div class="position-relative px-md-40 px-0">
-    <swiper
-      class="swiper swiper-latest cards cards-book cards-book-type-1"
-      :options="swiperOption"
+  <div class="cards cards-author">
+    <div
+      class="card-author"
+      v-for="(list, index) in lists"
+      :key="index"
     >
-      <swiper-slide class="card-book" v-for="(list, index) in lists" :key="index">
-        <NuxtLink :to="`/book/${list.id}`">
-          <span class="card-image">
-            <img :src="list.covers[0].photo_url" :alt="list.title">
+      <NuxtLink :to="`/book/${list.id}`">
+        <span class="card-image">
+          <img src="https://books.cw.com.tw/upload_author/201806/author_1529942327_2.png" alt="">
+        </span>
+        <span class="card-body pt-10 text-center">
+          <span class="card-title h4 serif fw-bold my-0">
+            凱莉‧紐金特<br/>Carrie Nugent
           </span>
-          <span class="card-body pt-10">
-            <span class="card-title fs-4 mb-5">{{ list.subtitle }}</span>
-            <span class="card-author fs-5">
-              <span v-for="(author, index) in list.authors" :key="`${author}-${index}`">{{ author.name }}</span>
-            </span>
-          </span>
-        </NuxtLink>
-      </swiper-slide>
-    </swiper>
-    <div class="swiper-latest-pagination d-md-block d-none"></div>
-    <div class="swiper-latest-button-prev d-md-block d-none">
-      <i class="icon icon-arrow-left"></i>
+        </span>
+      </NuxtLink>
     </div>
-    <div class="swiper-latest-button-next d-md-block d-none">
-      <i class="icon icon-arrow-right"></i>
-    </div>
+    <More
+      class="mx-auto"
+      v-if="isLastPage"
+      @emitMoreTrigged="onMoreTrigged"
+    />
   </div>
 </template>
 
@@ -32,9 +28,10 @@
   export default {
     data() {
       return {
+        isLastPage: 'DnF1ZXJ5VGhlbkZldGNoBQAAAAANiNDiFkg2aTEtX3J3UXNtd0lIOHZSYkd1WncAAAAADYsSshZDMnI2MWVtZFJydUkza01kdlZsY3FnAAAAAA2LErEWQzJyNjFlbWRScnVJM2tNZHZWbGNxZwAAAAANiNDjFkg2aTEtX3J3UXNtd0lIOHZSYkd1WncAAAAADYsSsBZDMnI2MWVtZFJydUkza01kdlZsY3Fn',
         lists: [
           {
-            "id": 2,
+            "id": 1,
             "title": "零規則",
             "subtitle": "高人才密度x完全透明x最低管控，首度完整直擊Netflix圈粉全球的關鍵祕密",
             "covers": [
@@ -51,16 +48,13 @@
             ],
             "authors": [
               {
-                "id": 2,
-                "name": "里德‧海斯汀",
-                "sort": 1
-              },
-              {
                 "id": 1,
-                "name": "艾琳‧梅爾",
-                "sort": 2
+                "name": "里德‧海斯汀",
+                "status": 1,
+                "sort": 1
               }
             ],
+            "selling_status": 2,
             "publish_date": "2022-02-22"
           },
           {
@@ -106,6 +100,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -131,6 +126,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -166,6 +162,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -191,6 +188,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -216,6 +214,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 3,
             "publish_date": "2022-02-22"
           },
           {
@@ -241,6 +240,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -266,6 +266,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -291,6 +292,7 @@
                 "sort": 1
               }
             ],
+            "selling_status": 1,
             "publish_date": "2022-02-22"
           },
           {
@@ -326,39 +328,75 @@
                 "sort": 1
               }
             ],
+            "selling_status": 4,
             "publish_date": "2022-02-22"
           },
-        ],
-        swiperOption: {
-          slidesPerView: 5,
-          slidesPerGroup: 5,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-latest-pagination",
-            clickable: true,
-          },
-          navigation: {
-            prevEl: '.swiper-latest-button-prev',
-            nextEl: '.swiper-latest-button-next',
-          },
-          breakpoints: {
-            1280: {
-              slidesPerView: 4,
-              slidesPerGroup: 4,
-              spaceBetween: 30,
-            },
-            768: {
-              slidesPerView: 3,
-              slidesPerGroup: 3,
-            },
-            540: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-              spaceBetween: 20,
-            },
-          },
-        }
+        ]
       }
+    },
+    methods: {
+      onMoreTrigged() {
+        console.log('這裡呼叫下一頁 Api');
+        let fakeResponseLists = [
+          {
+            "id": 1,
+            "title": "男孩、鼴鼠、狐狸與馬",
+            "subtitle": "",
+            "covers": [
+              {
+                "id": 2,
+                "photo_url": "https://www.books.com.tw/img/001/091/48/0010914874.jpg",
+                "sort": 1
+              },
+              {
+                "id": 1,
+                "photo_url": "https://www.books.com.tw/img/001/091/48/0010914874_bc_01.jpg",
+                "sort": 2
+              }
+            ],
+            "authors": [
+              {
+                "id": 1,
+                "name": "查理．麥克斯",
+                "sort": 1
+              }
+            ],
+            "selling_status": 1,
+            "publish_date": "2022-02-22"
+          },
+          {
+            "id": 1,
+            "title": "我的孩子要在這裡讀書",
+            "subtitle": "黃建興建築師經典校園走讀",
+            "covers": [
+              {
+                "id": 2,
+                "photo_url": "https://www.books.com.tw/img/001/091/22/0010912286.jpg",
+                "sort": 1
+              },
+              {
+                "id": 1,
+                "photo_url": "https://www.books.com.tw/img/001/091/22/0010912286_bc_01.jpg",
+                "sort": 2
+              }
+            ],
+            "authors": [
+              {
+                "id": 1,
+                "name": "游苔",
+                "sort": 1
+              }
+            ],
+            "selling_status": 1,
+            "publish_date": "2022-02-22"
+          },
+        ];
+        let fakeResponseCursorId = null;
+        fakeResponseLists.forEach(item => {
+          this.lists.push(item);
+        });
+        this.isLastPage = fakeResponseCursorId;
+      },
     },
   };
 </script>
