@@ -399,5 +399,54 @@
         color: $gray-400;
       }
     }
-  }  
+  }
+  &.cards-digest {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-digest {
+    .card-image {
+      position: relative;
+      overflow: hidden;
+      &::before {
+        @include beforeafter('', block);
+        position: relative;
+        width: 100%;
+        padding-top: 75%;
+        @include media-breakpoint-up(md) {
+          padding-top: 74%;
+        }
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100.1%;
+        height: 100.1%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s $timing-function, height 0.2s $timing-function;
+      }
+    }
+    &:hover {
+      .card-image img {
+        max-width: none;
+        width: 115%;
+        height: 115%;
+      }
+    }
+    .card-title {
+      color: $gray-400;
+    }
+    .card-body {
+      background-color: $white;
+      .card-label {
+        color: $gray-200;
+      }
+      .card-phrase {
+        color: $gray-300;
+        @include lineclamp(3);
+      }
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <template>
   <form class="search-group" @submit.prevent="submit">
     <input type="text" class="px-15 py-md-10 py-15" placeholder="請輸入關鍵字" ref="search" name="search" v-model="search">
-    <button type="submit" class="px-15 py-md-10 py-15">
+    <button type="submit" class="px-15 py-md-10 py-15" :disabled="!search">
       <i class="icon icon-search"></i>
     </button>
   </form>
