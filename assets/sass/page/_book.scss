@@ -1,0 +1,47 @@
+.edit-block {
+  position: relative;
+  @include media-breakpoint-up(md) {
+    padding-top: 20px;
+  }
+  #detail & {
+    a.btn {
+      font-weight: 500;
+    }
+  }
+  .content,
+  .table-of-content {
+    position: relative;
+    > * {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    > *:first-child {
+      margin-top: 0;
+    }
+  }
+  &.expand-block {
+    padding-bottom: 40px;
+  }
+  &.ellipsis-block {
+    .content,
+    .table-of-content {
+      overflow: hidden;
+      &::before {
+        @include beforeafter('', block);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15px;
+        background-color: $white;
+        background: $white;
+        background: linear-gradient(0deg, rgba($white, 1) 0%, rgba($white, 0) 100%);
+      }  
+    }
+    .content {
+      max-height: 365px;
+    }
+    .table-of-content {
+      max-height: 240px;
+    }
+  }
+}

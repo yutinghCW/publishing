@@ -1,10 +1,16 @@
 <template>
-  <nav class="breadcrumb" aria-label="breadcrumb">
-    {{ category }}
-    {{ emitBreadcrumb }}
+  <nav v-if="category" class="breadcrumb" aria-label="breadcrumb">
     <ol>
-      <!-- <li><a class="btn btn-text btn-decoration" href="../books/index.html">{{ category.name }}</a></li> -->
-      <!-- <li><a class="btn btn-text btn-decoration" href="../books/id.html">{{ emitBreadcrumb.title }}</a></li> -->
+      <li>
+        <NuxtLink :to="`/${category.link}`" class="btn btn-text btn-decoration">
+          {{ category.name }}
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink :to="`/${category.link}/${emitBreadcrumb.id}`" class="btn btn-text btn-decoration">
+          {{ emitBreadcrumb.title }}
+        </NuxtLink>
+      </li>
     </ol>
   </nav>
 </template>
@@ -19,21 +25,21 @@
     props: ['emit-breadcrumb', 'emit-category'],
     mounted () {
       switch (this.emitCategory) {
-        case 'book':
+        case 'books':
           this.category = {
-            link: 'book',
+            link: 'books',
             name: '書籍'
           };
           break;
         case 'article':
           this.category = {
-            link: 'article',
+            link: 'articles',
             name: '書摘'
           };
           break;
         case 'author':
           this.category = {
-            link: 'author',
+            link: 'authors',
             name: '作者'
           };
           break;

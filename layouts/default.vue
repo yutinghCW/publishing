@@ -8,6 +8,12 @@
         <Search />
       </template>
     </Header>
+    <Black
+      :class="{
+        'opened': modal.status,
+        'modal-black': modal.status,
+      }"
+    />
     <Nuxt />
     <Footer />
   </div>
@@ -18,7 +24,18 @@ export default {
   data() {
     return {
       scrollToggle: false,
+      modal: {
+        status: false,
+        type: null,
+        title: null,
+        source: null,
+      },
     }
+  },
+  provide: function () {
+    return {
+      "layoutModal": this.modal
+    };
   },
   mounted() {
     const height = window.innerHeight;

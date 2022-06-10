@@ -39,10 +39,17 @@ nav.menu {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
+    }
+    @include media-breakpoint-up(lg) {
       gap: 20px;
     }
     > li {
       @include media-breakpoint-up(md) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      @include media-breakpoint-up(lg) {
         padding-left: 20px;
         padding-right: 20px;
       }

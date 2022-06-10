@@ -1,4 +1,7 @@
 .inner-page {
+  main {
+    padding-bottom: 20px;
+  }
   section.section-kv {
     img {
       @include media-breakpoint-down(md) {
@@ -128,7 +131,7 @@
     padding-top: 30px;
     @include media-breakpoint-up(md) {
       display: grid;
-      grid-template-columns: 1030px 1fr;
+      grid-template-columns: calc(100% - 140px) 140px;
       padding-top: 60px;
     }
     aside {
