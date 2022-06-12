@@ -112,6 +112,14 @@
       }
     }
     .author-intro {
+      &.ellipsis-block {
+        @include media-breakpoint-down(md) {
+          margin-bottom: -10px;
+          p {
+            @include lineclamp(6);
+          }
+        }
+      }
       p {
         @include media-breakpoint-up(md) {
           font-size: $h3;

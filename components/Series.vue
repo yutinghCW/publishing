@@ -40,8 +40,8 @@
     data() {
       return {
         swiperOption: {
-          slidesPerView: 5,
-          slidesPerGroup: 5,
+          slidesPerView: this.emitNumber,
+          slidesPerGroup: this.emitNumber,
           spaceBetween: 30,
           pagination: {
             el: ".swiper-series-pagination",
@@ -53,13 +53,13 @@
           },
           breakpoints: {
             1280: {
-              slidesPerView: 4,
-              slidesPerGroup: 4,
+              slidesPerView: this.emitNumber - 1,
+              slidesPerGroup: this.emitNumber - 1,
               spaceBetween: 30,
             },
             768: {
-              slidesPerView: 3,
-              slidesPerGroup: 3,
+              slidesPerView: this.emitNumber - 2,
+              slidesPerGroup: this.emitNumber - 2,
             },
             540: {
               slidesPerView: 2,
@@ -70,7 +70,7 @@
         }
       }
     },
-    props: ['emit-series'],
+    props: ['emit-series', 'emit-number'],
   };
 </script>
 

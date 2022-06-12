@@ -6,7 +6,12 @@
           {{ category.name }}
         </NuxtLink>
       </li>
-      <li>
+      <li v-if="emitCategory === 'author'">
+        <NuxtLink :to="{path: `/${category.link}`, hash: `#${breadcrumb.hash}`}" class="btn btn-text btn-decoration">
+          {{ breadcrumb.title }}
+        </NuxtLink>
+      </li>
+      <li v-else>
         <NuxtLink :to="`/${category.link}/${emitBreadcrumb.id}`" class="btn btn-text btn-decoration">
           {{ emitBreadcrumb.title }}
         </NuxtLink>
@@ -20,6 +25,7 @@
     data() {
       return {
         category: null,
+        breadcrumb: null,
       }
     },
     props: ['emit-breadcrumb', 'emit-category'],
@@ -42,8 +48,20 @@
             link: 'authors',
             name: '作者'
           };
-          break;
-        default:
+          switch (this.emitBreadcrumb) {
+            case 1:
+              this.breadcrumb = {
+                hash: 'chinese',
+                title: '華文作者',
+              }
+              break;
+            case 2:
+              this.breadcrumb = {
+                hash: 'foreign',
+                title: '外文作者',
+              }
+              break;
+          }
           break;
       }
     }

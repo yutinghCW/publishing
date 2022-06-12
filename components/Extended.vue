@@ -1,5 +1,5 @@
 <template>
-  <div class="cards cards-extended px-md-30 mb-md-40 mb-10">
+  <div class="cards cards-extended">
     <div
       v-for="extend in emitExtend"
       :key="extend.id"

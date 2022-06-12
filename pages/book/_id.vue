@@ -69,7 +69,7 @@
             </svg>        
             <div class="px-md-30">
               <Title class="mb-40">系列書籍</Title>
-              <BookSeries :emit-series="related" />
+              <Series emit-number="5" :emit-series="related" />
             </div>
             <svg class="reading-bottom" width="600" height="25" viewBox="0 0 600 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M600 0C455.5 0.5 334.78 1.67 300 25C265.22 1.67 144.5 0.5 0 0H600Z" fill="#F5F5F5"></path>
@@ -141,7 +141,7 @@
         <section data-id="video" class="unit-section">
           <a class="anchor" id="video"></a>
           <Title class="mb-40">相關影音</Title>
-          <BookVideo
+          <Video
             :emit-video="videos"
             @emit-modal="onOpenModal"
           />
@@ -159,7 +159,7 @@
             </svg>        
             <div class="px-md-30">
               <Title class="mb-40">同類書籍</Title>
-              <BookSeries :emit-series="recommends" />
+              <Series emit-number="5" :emit-series="recommends" />
             </div>
             <svg class="reading-bottom" width="600" height="25" viewBox="0 0 600 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M600 0C455.5 0.5 334.78 1.67 300 25C265.22 1.67 144.5 0.5 0 0H600Z" fill="#F5F5F5"></path>
@@ -169,7 +169,7 @@
         <section data-id="extended" class="unit-section">
           <a class="anchor" id="extended"></a>
           <Title class="mb-40">延伸內容</Title>
-          <BookExtended :emit-extend="links" />
+          <Extended class="px-md-30 mb-md-40 mb-10" :emit-extend="links" />
         </section>
       </article>
       <aside class="px-md-30">
