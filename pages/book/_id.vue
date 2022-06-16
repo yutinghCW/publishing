@@ -329,7 +329,7 @@
               "name": "里德‧海斯汀",
               "english_name": "Reed Hastings",
               "introduction": "里德‧海斯汀（Reed Hastings）是創業家，1997年與友人共同創立Netflix，並自1999年起擔任董事長兼執行長，在娛樂產業掀起革命。",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "status": 1,
               "sort": 1
             },
@@ -338,7 +338,7 @@
               "name": "艾琳‧梅爾",
               "english_name": "Erin Meyer",
               "introduction": "艾琳‧梅爾（Erin Meyer）是《文化地圖》作者，也是全球頂尖商學院INSEAD歐洲工商管理學院教授。她的文章見於《哈佛商業評論》《紐約時報》及《富比士》。2019年，艾琳獲Thinkers50評選為全球五十大最具影響力的商業思想家。",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "status": 1,
               "sort": 2
             }
@@ -349,7 +349,7 @@
               "name": "韓絜光",
               "english_name": "",
               "introduction": "臺大外文系畢業，專職人文科普書籍與字幕翻譯。",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "status": 1,
               "sort": 1
             }
@@ -367,12 +367,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 3,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -388,7 +388,7 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               }
             ],
@@ -406,12 +406,12 @@
             "covers": [
               {
                 "id": 3,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 7,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -427,7 +427,7 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               }
             ],
@@ -488,7 +488,7 @@
           {
             "id": 1,
             "title": "【SDGs兒童永續書房@天下】用閱讀，培養新一代世界公民",
-            "photo_url": "https://fakeimg.pl/253x193/",
+            "photo_url": "https://dummyimage.com/253x193/",
             "url": "https://youtu.be/9ppN5nJEbgQ",
             "sort": 1
           }
@@ -640,8 +640,7 @@
       return {
         bodyAttrs: {
           class: [
-            'book-page inner-page',
-            this.modal.status ? 'opened' : '',
+            'book-page inner-page'
           ]
         }
       }

@@ -71,10 +71,17 @@
         swiperOption: {
           slidesPerView: 5,
           slidesPerGroup: 5,
+          spaceBetween: 25,
           breakpoints: {
-            1024: {
+            1023: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              spaceBetween: 25,
+            },
+            767: {
               slidesPerView: 2,
               slidesPerGroup: 2,
+              spaceBetween: 0,
             },
           },
         }

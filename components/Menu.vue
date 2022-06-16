@@ -6,18 +6,22 @@
       </li>
       <li>
         <span>書籍</span>
-        <button type="button" class="open-block">
+        <button
+          type="button"
+          class="open-block"
+          @click="onToggleBlock('books')"
+        >
           <i class="icon icon-arrow-down"></i>
         </button>
-        <div class="block">
+        <VueSlideToggle :open="books.toggle" tag="div" class="block" :duration="500">
           <div class="container py-30">
             <div class="anchor">
               <NuxtLink :to="{path: '/', hash: '#latest'}" class="btn btn-outlined btn-primary">最新出版</NuxtLink>
             </div>
             <div class="recommend">
               <ul>
-                <li>
-                  <NuxtLink to="/books/id" class="btn btn-contained btn-white">財經管理</NuxtLink>
+                <li v-for="category in books.categories" :key="`選單-書籍-${category.id}`">
+                  <NuxtLink :to="`/books/${category.id}`" class="btn btn-contained btn-white">{{ category.title }}</NuxtLink>
                 </li>
               </ul>
               <div class="spec-button mt-md-auto mt-20">
@@ -30,14 +34,18 @@
               </a>
             </div>
           </div>
-        </div>
+        </VueSlideToggle>
       </li>
       <li>
         <span>作者</span>
-        <button type="button" class="open-block">
+        <button
+          type="button"
+          class="open-block"
+          @click="onToggleBlock('authors')"
+        >
           <i class="icon icon-arrow-down"></i>
         </button>
-        <div class="block">
+        <VueSlideToggle :open="authors.toggle" tag="div" class="block" :duration="500">
           <div class="container py-30">
             <div class="anchor">
               <NuxtLink :to="{path: '/authors', hash: '#chinese'}" class="btn btn-outlined btn-primary">華文作者</NuxtLink>
@@ -45,8 +53,8 @@
             </div>
             <div class="recommend">
               <ul>
-                <li>
-                  <NuxtLink to="/author/id" class="btn btn-contained btn-white">賽門・西奈克</NuxtLink>
+                <li v-for="author in authors.lists" :key="`選單-作者-${author.id}`">
+                  <NuxtLink :to="`/author/${author.id}`" class="btn btn-contained btn-white">{{ author.name }}</NuxtLink>
                 </li>
               </ul>
               <div class="spec-button mt-md-auto mt-20">
@@ -59,22 +67,26 @@
               </a>
             </div>
           </div>
-        </div>
+        </VueSlideToggle>
       </li>
       <li>
         <span>閱讀</span>
-        <button type="button" class="open-block">
+        <button
+          type="button"
+          class="open-block"
+          @click="onToggleBlock('articles')"
+        >
           <i class="icon icon-arrow-down"></i>
         </button>
-        <div class="block">
+        <VueSlideToggle :open="articles.toggle" tag="div" class="block" :duration="500">
           <div class="container py-30">
             <div class="anchor">
               <NuxtLink :to="{path: '/', hash: '#reading'}" class="btn btn-outlined btn-primary">精選閱讀</NuxtLink>
             </div>
             <div class="recommend">
               <ul>
-                <li>
-                  <NuxtLink to="/articles/id" class="btn btn-contained btn-white">經營管理</NuxtLink>
+                <li v-for="category in articles.categories" :key="`選單-閱讀-${category.id}`">
+                  <NuxtLink :to="`/articles/${category.id}`" class="btn btn-contained btn-white">{{ category.title }}</NuxtLink>
                 </li>
               </ul>
               <div class="spec-button mt-md-auto mt-20">
@@ -87,17 +99,21 @@
               </a>
             </div>
           </div>
-        </div>
+        </VueSlideToggle>
       </li>
       <li>
         <NuxtLink to="/about">關於我們</NuxtLink>
       </li>
       <li>
         <span>追蹤我們</span>
-        <button type="button" class="open-block">
+        <button
+          type="button"
+          class="open-block"
+          @click="onToggleBlock('follows')"
+        >
           <i class="icon icon-arrow-down"></i>
         </button>
-        <div class="block">
+        <VueSlideToggle :open="follows.toggle" tag="div" class="block" :duration="500">
           <div class="container py-30">
             <div class="anchor">
               <a class="btn btn-outlined btn-primary" href="https://www.cwbook.com.tw/member/mcntr/EditEprEdm!redirect.shtml">訂閱電子報</a>
@@ -113,18 +129,110 @@
               </a>
             </div>
           </div>
-        </div>
+        </VueSlideToggle>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {
-  
-}
+  export default {
+    data () {
+      return {
+        books: {
+          toggle: false,
+          categories: [
+            {
+              "id": 1,
+              "title": "財經管理",
+              "photo_url": "https://fakeimg.pl/253x193/",
+              "sort": 1
+            },
+            {
+              "id": 3,
+              "title": "心靈成長",
+              "photo_url": "https://fakeimg.pl/253x193/",
+              "sort": 2
+            }
+          ]
+        },
+        articles: {
+          toggle: false,
+          categories: [
+            {
+              "id": 1,
+              "title": "財經管理",
+              "photo_url": "https://fakeimg.pl/253x193/",
+              "sort": 1
+            },
+            {
+              "id": 3,
+              "title": "心靈成長",
+              "photo_url": "https://fakeimg.pl/253x193/",
+              "sort": 2
+            }
+          ]
+        },
+        authors: {
+          toggle: false,
+          lists: [
+            {
+              "id": 1,
+              "name": "賽門・西奈克",
+            },
+            {
+              "id": 2,
+              "name": "彼得・杜拉克",
+            },
+            {
+              "id": 3,
+              "name": "克雷頓．克里斯汀生",
+            },
+            {
+              "id": 4,
+              "name": "稻盛和夫",
+            },
+            {
+              "id": 5,
+              "name": "蔡壁名",
+            },
+            {
+              "id": 6,
+              "name": "蔡壁名",
+            }
+          ]
+        },
+        follows: {
+          toggle: false
+        },
+      }
+    },
+    methods: {
+      onToggleBlock(variant) {
+        switch (variant) {
+          case 'books':
+            this.articles.toggle = false;
+            this.authors.toggle = false;
+            this.follows.toggle = false;
+            break;
+          case 'articles':
+            this.books.toggle = false;
+            this.authors.toggle = false;
+            this.follows.toggle = false;
+            break;
+          case 'authors':
+            this.books.toggle = false;
+            this.articles.toggle = false;
+            this.follows.toggle = false;
+            break;
+          case 'follows':
+            this.books.toggle = false;
+            this.articles.toggle = false;
+            this.authors.toggle = false;
+            break;
+        }
+        this[variant].toggle = !this[variant].toggle;
+      }
+    },
+  }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

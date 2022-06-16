@@ -98,21 +98,18 @@ nav.menu {
         }
       }
       > .block {
-        display: none;
         background-color: $gray-100;
         @include media-breakpoint-up(md) {
           position: absolute;
           top: 100%;
           left: 0;
+          display: none;
           width: 100%;
           box-shadow: 0 2px 4px rgba($black, .1);
         }
         @include media-breakpoint-down(md) {
           padding-left: 10px;
           padding-right: 10px;
-          &.opened {
-            display: block;
-          }
         }
         .container {
           max-width: 1130px;
@@ -137,6 +134,7 @@ nav.menu {
               display: flex;
               flex-wrap: wrap;
               align-content: space-between;
+              width: 100%;
               @include media-breakpoint-up(md) {
                 margin-left: 40px;
                 margin-right: 100px;
@@ -188,6 +186,7 @@ nav.menu {
         > .block {
           @include media-breakpoint-up(md) {
             display: block;
+            height: auto !important;
           }
         }
       }

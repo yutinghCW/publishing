@@ -92,7 +92,7 @@
             clickable: true,
           },
           breakpoints: {
-            1024: {
+            1023: {
               slidesPerView: 1,
             },
           },
@@ -125,6 +125,7 @@
     flex-wrap: wrap;
     gap: 0 20px;
     .card-reading {
+      position: relative;
       @include media-breakpoint-up(md) {
         width: calc(50% - 10px);
       }

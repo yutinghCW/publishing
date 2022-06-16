@@ -75,6 +75,13 @@
           <Video
             :emit-video="videos.items"
             @emit-modal="onOpenModal"
+            :class="{
+              'author-ellipsis-block': videosToggle
+            }"
+          />
+          <More
+            v-if="videosToggle"
+            @emitMoreTrigged="videosToggle = !videosToggle"
           />
         </section>
       </article>
@@ -109,7 +116,7 @@
           "id": 1,
           "name": "里德‧海斯汀",
           "english_name": "Reed Hastings",
-          "photo_url": "https://fakeimg.pl/253x193/",
+          "photo_url": "https://dummyimage.com/253x193/",
           "introduction": "里德．海斯汀（Reed Hastings）是創業家，1997 年與友人共同創立 Netflix，並自 1999 年起擔任董事長兼執行長，在娛樂產業掀起革命。他的第一家公司 Pure Software 創立於 1991 年，在 Netflix 成立前夕被收購。里德在 2000 年到 2004 年曾任加州教育委員會委員，至今活躍於教育慈善事業，是 Dreambox Learning、KIPP 和 Pahara 等多個教育組織的董事成員。1983 年，他在鮑登學院取得學士學位，1988 年於史丹佛大學取得人工智能碩士學位。大學畢業到研究所入學之間，里德參與和平工作團在南非擔任志願教師。",
           "group": 2,
           "social_media": [
@@ -143,12 +150,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -160,12 +167,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -177,12 +184,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -194,12 +201,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -211,12 +218,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -228,12 +235,12 @@
             "covers": [
               {
                 "id": 1,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 1
               },
               {
                 "id": 2,
-                "photo_url": "https://fakeimg.pl/253x193/",
+                "photo_url": "https://dummyimage.com/253x193/",
                 "sort": 2
               }
             ],
@@ -253,14 +260,42 @@
             {
               "id": 235,
               "title": "追求創新，別再組交響樂團，改玩爵士樂吧",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "url": "https://csr.cw.com.tw/",
               "sort": 1
             },
             {
               "id": 234,
               "title": "沒有花費上限，只有「是否符合公司最大利益？」",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "url": "https://www.cw.com.tw/",
+              "sort": 2
+            },
+            {
+              "id": 232,
+              "title": "沒有花費上限，只有「是否符合公司最大利益？」",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "url": "https://www.cw.com.tw/",
+              "sort": 2
+            },
+            {
+              "id": 232,
+              "title": "沒有花費上限，只有「是否符合公司最大利益？」",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "url": "https://www.cw.com.tw/",
+              "sort": 2
+            },
+            {
+              "id": 231,
+              "title": "沒有花費上限，只有「是否符合公司最大利益？」",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "url": "https://www.cw.com.tw/",
+              "sort": 2
+            },
+            {
+              "id": 230,
+              "title": "沒有花費上限，只有「是否符合公司最大利益？」",
+              "photo_url": "https://dummyimage.com/253x193/",
               "url": "https://www.cw.com.tw/",
               "sort": 2
             }
@@ -279,20 +314,39 @@
             {
               "id": 1,
               "url": "https://youtu.be/qWNoJJNS8bY",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "sort": 1
             },
             {
               "id": 2,
               "url": "https://youtu.be/E-n-VD4gF4M",
-              "photo_url": "https://fakeimg.pl/253x193/",
+              "photo_url": "https://dummyimage.com/253x193/",
               "sort": 2
-            }
+            },
+            {
+              "id": 3,
+              "url": "https://youtu.be/qWNoJJNS8bY",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "sort": 1
+            },
+            {
+              "id": 4,
+              "url": "https://youtu.be/E-n-VD4gF4M",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "sort": 2
+            },
+            {
+              "id": 5,
+              "url": "https://youtu.be/qWNoJJNS8bY",
+              "photo_url": "https://dummyimage.com/253x193/",
+              "sort": 1
+            },
           ]
         },
         modal: this.layoutModal,
         introduction: null,
         articlesToggle: false,
+        videosToggle: false,
       }
     },
     inject: ['layoutModal'],
@@ -315,7 +369,6 @@
         this[variant] = null;
       },
       detectContent(variant, height) {
-        console.log(this[variant], height);
         if ( this[variant] > height ) {
           return true
         }
@@ -354,6 +407,25 @@
     mounted () {
       this.introduction = document.querySelector('.author-intro').clientHeight;
 
+      if ( this.$device.isDesktop ) {
+        if ( this.articles.items.length > 4 ) {
+          this.articlesToggle = true;
+        }
+
+        if ( this.videos.items.length > 3 ) {
+          this.videosToggle = true;
+        }
+      } else {
+        if ( this.articles.items.length > 3 ) {
+          this.articlesToggle = true;
+        }
+
+        if ( this.videos.items.length > 2 ) {
+          this.videosToggle = true;
+        }
+      }
+
+
       const _document = document.querySelector.bind(document);
       const _documents = document.querySelectorAll.bind(document);
       let activeLink = null;
@@ -375,7 +447,6 @@
         bodyAttrs: {
           class: [
             'author-page inner-page',
-            this.modal.status ? 'opened' : '',
           ]
         }
       }

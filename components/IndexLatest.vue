@@ -342,16 +342,16 @@
             nextEl: '.swiper-latest-button-next',
           },
           breakpoints: {
-            1280: {
+            1023: {
               slidesPerView: 4,
               slidesPerGroup: 4,
               spaceBetween: 30,
             },
-            768: {
+            767: {
               slidesPerView: 3,
               slidesPerGroup: 3,
             },
-            540: {
+            539: {
               slidesPerView: 2,
               slidesPerGroup: 2,
               spaceBetween: 20,

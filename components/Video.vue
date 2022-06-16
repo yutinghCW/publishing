@@ -35,16 +35,17 @@
 </script>
 
 <style lang="scss" scoped>
-  .card-video {
-    padding: 0;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: left;
-    background-color: transparent;
-    border: 0;
-    appearance: none;
-    span {
-      display: block;
+  @import "@/assets/sass/import";
+  .author-ellipsis-block {
+    @include media-breakpoint-up(md) {
+      .card-video:nth-child(3) ~ .card-video {
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      .card-video:nth-child(2) ~ .card-video {
+        display: none;
+      }
     }
   }
 </style>

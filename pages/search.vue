@@ -520,7 +520,9 @@
     head () {
       return {
         bodyAttrs: {
-          class: 'search-page inner-page'
+          class: [
+            'search-page inner-page'
+          ]
         }
       }
     },

@@ -124,6 +124,16 @@
             prevEl: '.swiper-topic-button-prev',
             nextEl: '.swiper-topic-button-next',
           },
+          breakpoints: {
+            1023: {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+            },
+            767: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+          },
         }
       }
     },

@@ -32,8 +32,15 @@
   @import "@/assets/sass/import";
   .cards-digest.ellipsis-block {
     .card-digest {
-      &:nth-child(4) ~ .card-digest {
-        display: none;
+      @include media-breakpoint-up(md) {
+        &:nth-child(4) ~ .card-digest {
+          display: none;
+        }
+      }
+      @include media-breakpoint-down(md) {
+        &:nth-child(3) ~ .card-digest {
+          display: none;
+        }
       }
     }
   }

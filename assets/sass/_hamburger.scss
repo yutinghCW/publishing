@@ -35,7 +35,7 @@ $hamburger: (
   @include media-breakpoint-down(md) {
     &.opened {
       span {
-        width: map-get($hamburger, width) * 1.25;
+        width: map-get($hamburger, width) * 0.625;
         // height: map-get($hamburger, unit) - 1px;
         margin-top: 0;
         &:nth-child(1) {

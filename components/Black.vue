@@ -1,6 +1,16 @@
 <template>
-  <div class="black"></div>
+  <button
+    type="button"
+    class="black"
+    @click="$emit('emitFunction')"
+  ></button>
 </template>
+
+<script>
+export default {
+  emits: ['emitFunction'],
+}
+</script>
 
 <style lang="scss" scoped>
   @import "@/assets/sass/import";
@@ -8,7 +18,10 @@
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0;
     background-color: darken($black, 5%);
+    border: 0;
+    appearance: none;
     opacity: 0.5;
     z-index: 1;
     &.opened {
