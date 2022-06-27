@@ -20,7 +20,7 @@
         <hr class="d-md-block d-none my-20">
         <dl>
           <dt class="mb-5">作者：
-            <template v-for="(author, index) in items.authors"><template v-if="index !== 0">、</template><NuxtLink :to="`author/${author.id}`" :key="`作者-中文-${author.id}`" class="btn btn-text btn-decoration btn-black">{{ author.name }}</NuxtLink><NuxtLink :to="`author/${author.id}`" :key="`作者-英文-${author.id}`" class="btn btn-text btn-black">（{{ author.english_name }}）</NuxtLink></template>
+            <template v-for="(author, index) in items.authors"><template v-if="index !== 0">、</template><NuxtLink :to="`/author/${author.id}`" :key="`作者-中文-${author.id}`" class="btn btn-text btn-decoration btn-black">{{ author.name }}</NuxtLink><NuxtLink :to="`/author/${author.id}`" :key="`作者-英文-${author.id}`" class="btn btn-text btn-black">（{{ author.english_name }}）</NuxtLink></template>
           </dt>
           <dt v-if="$is_not_empty_array(items.translators)" class="mb-5">譯者：
             <template v-for="(translator, index) in items.translators"><template v-if="index !== 0">、</template>{{ translator.name }}</template>
@@ -144,7 +144,15 @@
           <Video
             :emit-video="videos"
             @emit-modal="onOpenModal"
+            :class="{
+              'book-ellipsis-block': videosToggle
+            }"
           />
+          <More
+            v-if="videosToggle"
+            @emitMoreTrigged="videosToggle = !videosToggle"
+          />
+          <hr class="mt-20 mb-30">
         </section>
         <section data-id="eshop" class="unit-section">
           <a class="anchor" id="eshop"></a>
@@ -491,6 +499,27 @@
             "photo_url": "https://dummyimage.com/253x193/",
             "url": "https://youtu.be/9ppN5nJEbgQ",
             "sort": 1
+          },
+          {
+            "id": 2,
+            "title": "【SDGs兒童永續書房@天下】用閱讀，培養新一代世界公民",
+            "photo_url": "https://dummyimage.com/253x193/",
+            "url": "https://youtu.be/9ppN5nJEbgQ",
+            "sort": 1
+          },
+          {
+            "id": 3,
+            "title": "【SDGs兒童永續書房@天下】用閱讀，培養新一代世界公民",
+            "photo_url": "https://dummyimage.com/253x193/",
+            "url": "https://youtu.be/9ppN5nJEbgQ",
+            "sort": 1
+          },
+          {
+            "id": 4,
+            "title": "【SDGs兒童永續書房@天下】用閱讀，培養新一代世界公民",
+            "photo_url": "https://dummyimage.com/253x193/",
+            "url": "https://youtu.be/9ppN5nJEbgQ",
+            "sort": 1
           }
         ],
         sales: [ // 紙本書
@@ -557,6 +586,7 @@
         catalog: null,
         selling: null,
         articlesToggle: false,
+        videosToggle: false,
       }
     },
     inject: ['layoutModal'],
@@ -615,8 +645,22 @@
       this.content = document.querySelector('.intro').children[2].children[0].clientHeight;
       this.catalog = document.querySelector('.catalog').children[2].children[0].clientHeight;
 
-      if ( this.articles.length > 4 ) {
-        this.articlesToggle = true;
+      if ( this.$device.isDesktop ) {
+        if ( this.articles.length > 4 ) {
+          this.articlesToggle = true;
+        }
+
+        if ( this.videos.length > 3 ) {
+          this.videosToggle = true;
+        }
+      } else {
+        if ( this.articles.length > 3 ) {
+          this.articlesToggle = true;
+        }
+
+        if ( this.videos.length > 2 ) {
+          this.videosToggle = true;
+        }
       }
 
       const _document = document.querySelector.bind(document);

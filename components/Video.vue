@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
   @import "@/assets/sass/import";
-  .author-ellipsis-block {
+  .book-ellipsis-block, .author-ellipsis-block {
     @include media-breakpoint-up(md) {
       .card-video:nth-child(3) ~ .card-video {
         display: none;

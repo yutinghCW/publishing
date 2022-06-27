@@ -1,4 +1,9 @@
 .author-page {
+  main {
+    @include media-breakpoint-down(md) {
+      overflow: hidden;
+    }
+  }
   .container-summary {
     @import "@/assets/sass/social";
   }

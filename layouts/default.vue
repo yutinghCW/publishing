@@ -46,12 +46,18 @@ export default {
         title: null,
         source: null,
       },
+      authorization: null,
     }
   },
   provide: function () {
     return {
-      "layoutModal": this.modal
+      "layoutModal": this.modal,
     };
+  },
+  beforeMount() {
+    if ( this.getLocalStorage() ) {
+      this.authorization = this.getLocalStorage();
+    }
   },
   mounted() {
     const height = window.innerHeight;
@@ -75,6 +81,9 @@ export default {
       this.modal.status = false;
       this.menu = false;
       this.search = false;
+    },
+    getLocalStorage() {
+      return localStorage.getItem('cw_publishing_token');
     },
   },
   head () {

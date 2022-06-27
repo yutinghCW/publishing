@@ -39,12 +39,13 @@
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
     data () {
       return {
         search: {
           key: '',
-          cursor: 'DnF1ZXJ5VGhlbkZldGNoBQAAAAANiNDiFkg2aTEtX3J3UXNtd0lIOHZSYkd1WncAAAAADYsSshZDMnI2MWVtZFJydUkza01kdlZsY3FnAAAAAA2LErEWQzJyNjFlbWRScnVJM2tNZHZWbGNxZwAAAAANiNDjFkg2aTEtX3J3UXNtd0lIOHZSYkd1WncAAAAADYsSsBZDMnI2MWVtZFJydUkza01kdlZsY3Fn',
+          cursor: '',
           books: [
             {
               "id": 1,
@@ -462,49 +463,24 @@
               "photo_url": "https://books.cw.com.tw/upload_author/201904/author_1555927676_2.jpg"
             },
           ],
-          articles: [
-            {
-              "id": 1,
-              "title": "加薪時代來了，但高薪不會讓你變有錢？",
-              "photo_url": "https://books.cw.com.tw/upload_article/202203/article_1648627089_1.jpg",
-              "content": "關於致富，最大的誤解應該是多數人都以為可以靠薪水變有錢，但這是行不通的。即使是律師、醫生這樣的高薪工作，如果不能成為合夥人或自己開業，而是拿寶貴的時間去換錢，也難以致富，因為時間是有限的。一個老上司曾經提醒我：「太聰明的人反而無法致富，因為永遠會有人給你一份足夠好的工作。」"
-            },
-            {
-              "id": 1,
-              "title": "不用死背、反覆抄寫，文轉圖深化記憶法讓你擁有冠軍級的記憶力",
-              "photo_url": "https://books.cw.com.tw/upload_article/202205/article_1652257636_1.jpg",
-              "content": "編按：「想不起來」、「說不出重點」種種失常表現與智商無關，也不是冒失粗心，而是因為多數人努力的途徑：逐字讀、反覆抄、拚命背，反而讓大腦更費力，於是怎麼記就怎麼忘。《過目不忘的文轉圖深化記憶法》作者池田義博45歲為了挑戰記憶力冠軍，開始研究如何「深化記憶」。他發現比起文字，大腦更擅長圖像記憶，但轉成圖像只能加深印象，若要達到過目不忘的境界，關鍵在吸收資訊時於腦中「連結」影像，大腦會自動將存在關聯的「完整情境」轉化成長期記憶，讓思緒不凌亂，關鍵時刻能立刻想起。這就是大腦最原始、最有效率的學習途徑。"
-            },
-            {
-              "id": 1,
-              "title": "熬夜讀書還是一直忘？懂得把資料變成知識，大腦這樣記憶才靈光！",
-              "photo_url": "https://books.cw.com.tw/upload_article/202108/article_1629962204_1.jpg",
-              "content": "「108課綱」全面上路，大學學測、國中會考型態都已經翻轉，超過萬字的多文字、長文章，跨領域、圖表與文字混合的題目大幅增加，「背多分」已經不靈光。沒有閱讀理解與批判思考的能力，各科學習就容易落後，跑去補習也不見得救得來。在建中教書超過25年的黃春木老師，是教學生思考的專家，多年擔任建中「人文社會科學資賦優異班」的召集人。在最新著作《高層次閱讀與思考》中，帶領讀者拆解有效閱讀與思考的必要元素，漸漸具備處理多文字、長篇章、跨領域、混合文本等資訊形式的能力，從理解到批判，並且能進行合乎邏輯的論證寫作，打穩獨立思考、自主學習的素養基礎。"
-            },
-            {
-              "id": 1,
-              "title": "小心「管他的效應」——設定具野心但有彈性的目標，打造不被一次失敗打倒的強韌心態",
-              "photo_url": "https://books.cw.com.tw/upload_article/202205/article_1652251449_1.png",
-              "content": "追求目標的途中，很容易會感到灰心，這種心態被巧妙地命名為「管他的效應」（what-the-hell effect）。相關研究顯示，即使只是微小的失敗，比如每天的飲食只超出目標幾卡路里，也可能導致我們的行為陷入惡性循環，像是乾脆一口氣吃掉整個蘋果派。對於曾嘗試減重的人，我舉的例子應該聽來很熟悉，假如你一早抵擋不了誘惑，忍不住拿了會議桌上的甜甜圈，接下來你很容易覺得「管他的，我都已經破戒，乾脆豁出去大吃」。小錯誤可能打擊你的信心，讓你認定自己永遠不會成功。而且不幸的是，目標愈遠大，小挫敗最終導致大崩壞的風險愈高。"
-            },
-            {
-              "id": 1,
-              "title": "貧民區出身的小歌女，回歸正常小學生的復學之路",
-              "photo_url": "https://books.cw.com.tw/upload_article/202203/article_1647934350_1.jpg",
-              "content": "吳惠瑜，頭銜多得數不清：台灣英特爾史上第一位女性總經理、威盛電子副總經理、必陞科技總經理兼任研碩電腦副總經理，現為公信電子總經理。她37歲就在當時任職的全球第一大半導體廠英特爾台灣分公司，締造出任最年輕總經理、首位女性總經理的雙紀錄。曾被《天下雜誌》選為台灣企業界最有影響力的女人，數十年在不同崗位都有優異的職涯表現。但風光的頭銜下，卻是她從底層一路爬升，力克逆境不畏命運：成長於淹水時得把豬推開才有床睡的家庭，5歲就為了家計去學藝，後來走唱那卡西直到小學五年級；害怕因家貧不能繼續升學，少女的她在書桌上刻「女工」二字砥礪自己；入社會經歷職場大起大落，小小業務助理主動向主管提出要轉職當業務工程師，下班後從零開始苦學電機、工程等知識，啟動職涯起飛的扉頁，接掌的職務曾重要到可影響台灣三大主機板廠股價；風光之際卻意外突遭解職，一度飽嘗人走茶涼的苦澀。"
-            },
-            {
-              "id": 1,
-              "title": "99%的努力都不會有結果？ 不要小看那有用1%帶來的龐大複利",
-              "photo_url": "https://books.cw.com.tw/upload_article/202203/article_1648631256_1.jpg",
-              "content": "生命中的所有回報，無論是財富、關係或知識，都來自複利。人生99%的努力都可能是白費的。雖然許多事都不會有結果，但也沒有什麼事情是完全白費力氣的，不要小看那僅有的1%。當你找到對的事可以追求、找到對的人可以合作時，就要專心投入其中，然後堅持十年、二十年，你就會在人際關係和財富累積上大豐收。了解複利的意義，對你的人生至關緊要。"
-            },
-          ],
+          articles: [],
         },
       };
     },
-		mounted () {
+    mounted () {
       this.search.key = this.$route.query.key;
+
+      axios.defaults.headers.common['authorization'] = localStorage.getItem('cw_publishing_token');
+      console.log(`${process.env.books_api}/search/articles/${this.search.key}?per_page=10`);
+      axios.get(`${process.env.books_api}/search/articles/${this.search.key}?per_page=10`)
+        .then(response => {
+          console.log(response);
+          this.cursor = response.data.cursor_id;
+          this.articles = response.data.items;
+        })
+        .catch(error => {
+          console.dir(error);
+        })
     },
     computed: {
       isDisplay: function() {

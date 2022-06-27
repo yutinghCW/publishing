@@ -21,6 +21,11 @@
 }
 
 .index-page {
+  main {
+    @include media-breakpoint-down(md) {
+      overflow: hidden;
+    }
+  }
   section {
     .anchor {
       top: -171px;

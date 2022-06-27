@@ -1,4 +1,10 @@
 export default {
+  env: {
+    books_host: process.env.BOOKS_HOST,
+    books_api: process.env.BOOKS_API,
+    proxy_api: process.env.PROXY_API,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '我讀網 - 天下雜誌出版',
@@ -25,8 +31,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/plugin.js", ssr: false },
-    { src: '~/plugins/helper.js', ssr: true },
+    { src: "@/plugins/plugin.js", ssr: false },
+    { src: "@/plugins/axios.js", mode: 'client' },
+    { src: "@/plugins/jsonld.js", ssr: true },
+    { src: '@/plugins/helper.js', ssr: true },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,14 +43,46 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/device',
+    'cookie-universal-nuxt',
+    '@nuxtjs/moment',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true,
+  },
+
+  router: {
+    base: '/',
+    middleware: 'auth'
+  },
+
+  axios: {
+    proxy: true,
+    prefix: '/api',
+    credentials: true,
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BOOKS_API
+    }
+  },
+
+  proxy: {
+    '/front/api': {
+      target: process.env.BOOKS_API,
+      changeOrigin: true, 
+      pathRewrite: {
+        '^/front/api': '',
+      },
+    }
   },
 
   ssr: true,

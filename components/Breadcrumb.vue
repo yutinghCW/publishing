@@ -6,12 +6,17 @@
           {{ category.name }}
         </NuxtLink>
       </li>
-      <li v-if="emitCategory === 'author'">
+      <li v-if="emitCategory === 'author'" v-show="emitBreadcrumb">
         <NuxtLink :to="{path: `/${category.link}`, hash: `#${breadcrumb.hash}`}" class="btn btn-text btn-decoration">
           {{ breadcrumb.title }}
         </NuxtLink>
       </li>
-      <li v-else>
+      <li v-else-if="(emitCategory === 'books' || emitCategory === 'articles') && emitBreadcrumb === '所有主題'">
+        <NuxtLink :to="`/${category.link}`" class="btn btn-text btn-decoration">
+          所有主題
+        </NuxtLink>
+      </li>
+      <li v-else-if="!(emitCategory === 'books' || emitCategory === 'articles')">
         <NuxtLink :to="`/${category.link}/${emitBreadcrumb.id}`" class="btn btn-text btn-decoration">
           {{ emitBreadcrumb.title }}
         </NuxtLink>
@@ -24,8 +29,19 @@
   export default {
     data() {
       return {
-        category: null,
-        breadcrumb: null,
+        category: {
+          link: '',
+          name: ''
+        },
+        channel: {
+          id: '',
+          link: '',
+          name: ''
+        },
+        breadcrumb: {
+          hash: '',
+          title: '',
+        },
       }
     },
     props: ['emit-breadcrumb', 'emit-category'],
@@ -41,6 +57,12 @@
           this.category = {
             link: 'articles',
             name: '書摘'
+          };
+          break;
+        case 'articles':
+          this.category = {
+            link: 'articles',
+            name: '閱讀'
           };
           break;
         case 'author':
@@ -59,6 +81,12 @@
               this.breadcrumb = {
                 hash: 'foreign',
                 title: '外文作者',
+              }
+              break;
+            default:
+              this.breadcrumb = {
+                hash: '',
+                title: '',
               }
               break;
           }
